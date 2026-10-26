@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#CAE5F6"></rect>
+  <circle cx="540" cy="70" r="120" fill="#9FD1F6"></circle>
+  <rect x="60" y="40" width="150" height="110" rx="8" fill="#F1F8FB"></rect>
+  <path d="M60 95h150M135 40v110" stroke="#9FD1F6" stroke-width="4"></path>
+  <circle cx="98" cy="70" r="14" fill="#FCEB87"></circle>
+  <rect x="0" y="270" width="640" height="90" fill="#6CB9F7"></rect>
+  <rect x="150" y="250" width="380" height="16" rx="4" fill="#075BA8"></rect>
+  <rect x="170" y="266" width="10" height="94" fill="#075BA8"></rect>
+  <rect x="500" y="266" width="10" height="94" fill="#075BA8"></rect>
+  <rect x="300" y="110" width="200" height="128" rx="10" fill="#1E3A5F"></rect>
+  <rect x="312" y="122" width="176" height="104" rx="4" fill="#0B2A4A"></rect>
+  <rect x="324" y="136" width="70" height="7" rx="3" fill="#FF9A52"></rect>
+  <rect x="336" y="152" width="110" height="7" rx="3" fill="#6CB9F7"></rect>
+  <rect x="336" y="168" width="84" height="7" rx="3" fill="#FCEB87"></rect>
+  <rect x="348" y="184" width="100" height="7" rx="3" fill="#9FD1F6"></rect>
+  <rect x="336" y="200" width="60" height="7" rx="3" fill="#6CB9F7"></rect>
+  <rect x="380" y="238" width="40" height="12" fill="#1E3A5F"></rect>
+  <rect x="190" y="208" width="104" height="42" rx="4" fill="#F1F8FB"></rect>
+  <rect x="198" y="214" width="88" height="30" rx="2" fill="#309FF9"></rect>
+  <path d="M210 224l8 5-8 5M226 236h18" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M160 360v-70c0-34 20-56 52-56h20c30 0 46 22 46 56v70z" fill="#075BA8"></path>
+  <circle cx="222" cy="186" r="30" fill="#F2C7A5"></circle>
+  <path d="M190 182c0-26 18-40 36-40s34 12 32 36c-10-12-26-16-40-12-12 4-20 10-28 16z" fill="#1E3A5F"></path>
+  <path d="M240 262l40-14" stroke="#F2C7A5" stroke-width="14" stroke-linecap="round"></path>
+  <rect x="540" y="200" width="40" height="50" rx="6" fill="#FFFFFF"></rect>
+  <path d="M560 200c-10-30 0-50 20-60-4 24-8 40-20 60zM560 200c-14-20-30-26-44-22 10 14 26 22 44 22z" fill="#309FF9"></path>
+</svg>

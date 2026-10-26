@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nộp bài – Xem lại và cam kết – mobile</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#F1F8FB;color:#1E3A5F}
+h1,h2,h3,.serif{font-family:'Lora',Georgia,serif;font-weight:700}
+a{color:#075BA8}a:hover{color:#05447E}
+*{box-sizing:border-box}
+.kv{display:flex;flex-direction:column;gap:2px;padding:12px 0;border-top:1px solid #CAE5F6}
+.kv dt{font-size:11px;font-weight:700;letter-spacing:.12em;color:#4A6584}
+.kv dd{margin:0;font-size:14px;font-weight:600;color:#1E3A5F;line-height:1.45}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div style="width: 100%; background: #F1F8FB; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #1E3A5F">
+
+<!-- HEADER MOBILE -->
+<header style="background: #FFFFFF; border-bottom: 1px solid #CAE5F6">
+  <div style="padding: 10px 16px; display: flex; align-items: center; gap: 10px">
+    <a href="MainMobile.dc.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; min-width: 0; flex: 1 1 auto">
+      <img src="assets/img/logo-gdtd.png" alt="Báo Giáo dục và Thời đại" style="height: 30px; width: auto; display: block; flex: 0 0 auto">
+      <span aria-hidden="true" style="width: 1px; height: 24px; background: #CAE5F6; flex: 0 0 auto"></span>
+      <span class="serif" style="font-size: 15px; font-weight: 700; color: #075BA8; line-height: 1.2">Chọn nghề, Chọn tương lai</span>
+    </a>
+    <span style="font-size: 12px; color: #4A6584; flex: 0 0 auto">Hồ sơ · <strong style="color: #075BA8">{{headStatus}}</strong></span>
+  </div>
+</header>
+
+<!-- ======== BIÊN NHẬN ======== -->
+<sc-if value="{{submitted}}" hint-placeholder-val="{{false}}">
+  <section style="padding: 24px 16px 40px; display: flex; flex-direction: column; gap: 16px">
+    <div role="status" style="background: #FFFFFF; border: 1px solid #CAE5F6; border-top: 6px solid #075BA8; border-radius: 16px; padding: 28px 16px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+      <span style="width: 64px; height: 64px; border-radius: 50%; background: #CAE5F6; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #F1F8FB"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">BIÊN NHẬN NỘP BÀI</span>
+      <h1 style="margin: 0; font-size: 24px; line-height: 1.25; color: #075BA8">Nộp bài thành công</h1>
+      <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #4A6584">Bài dự thi của bạn đã được hệ thống ghi nhận. Biên nhận đã được gửi tới [email@example.com].</p>
+      <dl style="margin: 4px 0 0; width: 100%; text-align: left">
+        <div class="kv"><dt>MÃ HỒ SƠ</dt><dd style="font-size: 22px; font-weight: 800; color: #075BA8; letter-spacing: 0.04em">[HS-000123]</dd></div>
+        <div class="kv"><dt>THỜI ĐIỂM HỆ THỐNG GHI NHẬN</dt><dd>14:52:07 · 18/11/2026 (giờ máy chủ)</dd></div>
+        <div class="kv"><dt>TÁC PHẨM</dt><dd>[Tên video dự thi] · Hạng mục 01 – Công nghệ số và sáng tạo số</dd></div>
+        <div class="kv"><dt>NGƯỜI DỰ THI</dt><dd>Nhóm 2 thành viên · Trưởng nhóm [Nguyễn Văn A]</dd></div>
+      </dl>
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 10px; margin-top: 6px">
+        <a href="BaiCuaToiMobile.dc.html" style="min-height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #075BA8; color: #FFFFFF; font-weight: 700; font-size: 15px; text-decoration: none">Xem bài dự thi của tôi</a>
+        <a href="#" style="min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; border: 1.5px solid #075BA8; color: #075BA8; font-weight: 700; font-size: 15px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Tải biên nhận (PDF)</a>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ======== XEM LẠI & CAM KẾT ======== -->
+<sc-if value="{{notSubmitted}}" hint-placeholder-val="{{true}}">
+  <nav aria-label="Các bước nộp bài" style="background: #FFFFFF; border-bottom: 1px solid #CAE5F6; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+    <ol style="list-style: none; margin: 0; padding: 0; display: flex; gap: 6px">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+        <li aria-current="{{s.aria}}" aria-label="Bước {{s.n}}: {{s.t}}" style="flex: 1; height: 6px; border-radius: 3px; background: {{s.bar}}"></li>
+      </sc-for>
+    </ol>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">BƯỚC 5 / 5</span>
+      <span style="font-size: 12px; color: #4A6584">Bước cuối</span>
+    </div>
+  </nav>
+
+  <section style="padding: 20px 16px 32px; display: flex; flex-direction: column; gap: 16px">
+    <h1 style="margin: 0; font-size: 24px; line-height: 1.25; color: #075BA8">Xem lại và cam kết</h1>
+
+    <!-- TÓM TẮT -->
+    <div style="background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+      <div style="aspect-ratio: 16 / 9; border-radius: 12px; background: #9FD1F6; display: flex; align-items: center; justify-content: center; position: relative">
+        <span style="width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#075BA8" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+        <span style="position: absolute; right: 10px; bottom: 10px; background: rgba(7, 91, 168, 0.88); color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 3px 7px; border-radius: 6px">1:24</span>
+      </div>
+      <span style="font-size: 12px; color: #4A6584">video_chon_nghe.mp4 · 142 MB · <a href="NopBai4Mobile.dc.html">Thay video</a></span>
+      <dl style="margin: 0">
+        <div class="kv"><dt>TÊN VIDEO · <a href="NopBai3Mobile.dc.html" style="letter-spacing: 0; font-weight: 600">Sửa</a></dt><dd class="serif" style="font-size: 18px; font-family: 'Lora', serif; font-weight: 700; color: #075BA8">[Tên video dự thi]</dd></div>
+        <div class="kv"><dt>HÌNH THỨC · HẠNG MỤC · MIỀN · <a href="NopBai1Mobile.dc.html" style="letter-spacing: 0; font-weight: 600">Sửa</a></dt><dd>Nhóm · 01 – Công nghệ số và sáng tạo số · Miền Nam</dd></div>
+        <div class="kv"><dt>CƠ SỞ GIÁO DỤC NGHỀ NGHIỆP</dt><dd>[Tên cơ sở GDNN], [Tỉnh/thành]</dd></div>
+        <div class="kv"><dt>NGƯỜI DỰ THI · <a href="NopBaiMobile.dc.html" style="letter-spacing: 0; font-weight: 600">Sửa</a></dt><dd>[Nguyễn Văn A] (trưởng nhóm) · CCCD •••• •••• 1234<br>[Trần Thị B] · CCCD •••• •••• 5678</dd></div>
+        <div class="kv"><dt>GIỚI THIỆU</dt><dd style="font-weight: 400">[Đoạn giới thiệu 128/150 từ, hiển thị 2 dòng đầu…]</dd></div>
+        <div class="kv"><dt>NGÔN NGỮ · KHAI BÁO AI</dt><dd>Tiếng Việt, có phụ đề · Có dùng AI: tạo phụ đề tự động</dd></div>
+      </dl>
+    </div>
+
+    <!-- ĐỒNG Ý CỦA NGƯỜI ĐẠI DIỆN -->
+    <sc-if value="{{guardianPending}}" hint-placeholder-val="{{false}}">
+      <div role="alert" style="display: flex; flex-direction: column; gap: 10px; background: #FEF3F2; border: 1.5px solid #FDA29B; border-radius: 12px; padding: 14px; font-size: 13px; line-height: 1.5">
+        <span><strong style="color: #B42318">Chưa thể nộp bài.</strong> Người đại diện của [Trần Thị B] (dưới 18 tuổi) chưa xác nhận đồng ý.</span>
+        <button type="button" style="min-height: 44px; border-radius: 10px; border: 1.5px solid #B42318; background: #FFFFFF; color: #B42318; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">Gửi lại mã xác nhận</button>
+      </div>
+    </sc-if>
+
+    <!-- CAM KẾT -->
+    <fieldset style="margin: 0; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+      <legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Cam kết của người dự thi</legend>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
+        <h2 style="margin: 0; font-size: 19px; color: #075BA8">Cam kết của người dự thi</h2>
+        <span style="font-size: 12px; font-weight: 700; color: #075BA8; flex: 0 0 auto">{{commitCount}}</span>
+      </div>
+      <sc-for list="{{commits}}" as="c" hint-placeholder-count="6">
+        <label style="display: flex; gap: 12px; align-items: flex-start; padding: 12px; border-radius: 12px; border: {{c.border}}; background: {{c.bg}}; cursor: pointer">
+          <input type="checkbox" checked="{{c.on}}" onChange="{{c.toggle}}" style="width: 22px; height: 22px; margin-top: 1px; accent-color: #075BA8; flex: 0 0 auto">
+          <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700; color: #1E3A5F">{{c.t}}</span><span style="font-size: 12px; line-height: 1.5; color: #4A6584">{{c.d}}</span></span>
+        </label>
+      </sc-for>
+    </fieldset>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 4px">
+      <span style="font-size: 12px; color: #4A6584; text-align: center">{{footNote}}</span>
+      <sc-if value="{{canSubmit}}" hint-placeholder-val="{{false}}">
+        <button type="button" onClick="{{submit}}" style="min-height: 50px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 12px; border: 0; background: {{wDeep}}; color: #FFFFFF; font-family: inherit; font-weight: 800; font-size: 16px; box-shadow: 0 4px 0 #075BA8; cursor: pointer">Nộp bài dự thi<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+      </sc-if>
+      <sc-if value="{{cannotSubmit}}" hint-placeholder-val="{{true}}">
+        <button type="button" disabled="disabled" style="min-height: 50px; border-radius: 12px; border: 0; background: #CAE5F6; color: #4A6584; font-family: inherit; font-weight: 800; font-size: 16px">Nộp bài dự thi</button>
+      </sc-if>
+      <a href="NopBai4Mobile.dc.html" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1.5px solid #075BA8; color: #075BA8; font-weight: 700; font-size: 15px; text-decoration: none">Quay lại</a>
+    </div>
+  </section>
+</sc-if>
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"guardian":{"editor":"enum","options":["Đã xác nhận","Chờ xác nhận"],"default":"Đã xác nhận"},"$preview":{"width":390,"height":2500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { on: { a: true, b: true, c: true, d: false, e: false, f: false }, submitted: false };
+  }
+  renderVals() {
+    const st = this.state;
+    const names = ['Hình thức & hạng mục', 'Người dự thi', 'Thông tin tác phẩm', 'Tải video', 'Xem lại & cam kết'];
+    const cur = 4;
+    const steps = names.map((t, i) => ({ n: String(i + 1), t, aria: i === cur ? 'step' : 'false', bar: i < cur ? '#075BA8' : '#FF9A52' }));
+    const defs = [
+      { id: 'a', t: 'Tính trung thực', d: 'Video do tôi/nhóm trực tiếp xây dựng; nội dung cốt lõi thể hiện quan điểm, trải nghiệm hoặc nghiên cứu của chúng tôi. Thông tin khai báo là chính xác.' },
+      { id: 'b', t: 'Chưa đạt giải ở cuộc thi khác', d: 'Tính đến thời điểm nộp bài, video chưa đạt giải tại bất kỳ cuộc thi nào khác.' },
+      { id: 'c', t: 'Quyền tác giả và quyền liên quan', d: 'Hình ảnh, âm nhạc, trích đoạn, dữ liệu của bên thứ ba trong video đều có quyền sử dụng hợp pháp. Tôi/nhóm tự giải quyết khiếu nại phát sinh.' },
+      { id: 'd', t: 'Quyền hình ảnh', d: 'Những người xuất hiện trong video đã đồng ý cho sử dụng hình ảnh, giọng nói của họ.' },
+      { id: 'e', t: 'Cấp quyền sử dụng tác phẩm cho Ban Tổ chức', d: 'Đồng ý cấp quyền sử dụng không độc quyền, không thu phí để đăng tải, trình chiếu, biên tập kỹ thuật, thêm phụ đề, trích đoạn và làm học liệu. Ban Tổ chức ghi tên tác giả và không làm sai lệch nội dung cốt lõi.' },
+      { id: 'f', t: 'Đồng ý xử lý dữ liệu cá nhân', d: 'Đồng ý để Ban Tổ chức xử lý dữ liệu cá nhân trong phạm vi quản lý hồ sơ, xác minh, chấm thi, công bố kết quả, trao giải và truyền thông của cuộc thi.' }
+    ];
+    const commits = defs.map((c) => ({
+      ...c,
+      on: !!st.on[c.id],
+      border: st.on[c.id] ? '1.5px solid #309FF9' : '1.5px solid #CAE5F6',
+      bg: st.on[c.id] ? '#F1F8FB' : '#FFFFFF',
+      toggle: () => this.setState({ on: { ...st.on, [c.id]: !st.on[c.id] } })
+    }));
+    const done = defs.filter((c) => st.on[c.id]).length;
+    const guardianOk = (this.props.guardian ?? 'Đã xác nhận') === 'Đã xác nhận';
+    const canSubmit = done === defs.length && guardianOk;
+    return {
+      steps, commits,
+      commitCount: done + '/' + defs.length + ' đã đồng ý',
+      guardianOk, guardianPending: !guardianOk,
+      canSubmit, cannotSubmit: !canSubmit,
+      footNote: canSubmit ? 'Sẵn sàng nộp bài' : (guardianOk ? 'Cần đồng ý đủ ' + defs.length + ' cam kết để nộp bài' : 'Chờ người đại diện xác nhận'),
+      wDeep: '#C2410C',
+      submitted: st.submitted, notSubmitted: !st.submitted,
+      headStatus: st.submitted ? 'Đã nộp' : 'Bản nháp',
+      submit: () => this.setState({ submitted: true })
+    };
+  }
+}
+</script>
+<script src="assets/dc-lite.js"></script>
+</body>
+</html>

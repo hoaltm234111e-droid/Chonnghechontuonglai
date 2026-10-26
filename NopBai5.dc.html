@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nộp bài – Xem lại và cam kết</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#F1F8FB;color:#1E3A5F}
+h1,h2,h3,.serif{font-family:'Lora',Georgia,serif;font-weight:700}
+a{color:#075BA8}a:hover{color:#05447E}
+*{box-sizing:border-box}
+.dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-weight:800}
+.kv{display:flex;flex-direction:column;gap:2px;padding:12px 0;border-top:1px solid #CAE5F6}
+.kv dt{font-size:11px;font-weight:700;letter-spacing:.12em;color:#4A6584}
+.kv dd{margin:0;font-size:15px;font-weight:600;color:#1E3A5F;line-height:1.45}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div style="width: 100%; background: #F1F8FB; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #1E3A5F">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #CAE5F6">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px">
+    <a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+      <img src="assets/img/logo-gdtd.png" alt="Báo Giáo dục và Thời đại" style="height: 36px; width: auto; display: block">
+      <span aria-hidden="true" style="width: 1px; height: 28px; background: #CAE5F6"></span>
+      <span class="serif" style="font-size: 18px; font-weight: 700; color: #075BA8">Chọn nghề, Chọn tương lai</span>
+    </a>
+    <span style="font-size: 14px; color: #4A6584">Hồ sơ dự thi · <strong style="color: #075BA8">{{headStatus}}</strong></span>
+    
+  </div>
+</header>
+
+<!-- ======== BIÊN NHẬN ======== -->
+<sc-if value="{{submitted}}" hint-placeholder-val="{{false}}">
+  <section style="max-width: 820px; margin: 0 auto; padding: 48px 24px 64px; display: flex; flex-direction: column; gap: 20px">
+    <div role="status" style="background: #FFFFFF; border: 1px solid #CAE5F6; border-top: 6px solid #075BA8; border-radius: 20px; padding: 36px 32px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+      <span style="width: 72px; height: 72px; border-radius: 50%; background: #CAE5F6; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 8px #F1F8FB"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">BIÊN NHẬN NỘP BÀI</span>
+      <h1 style="margin: 0; font-size: 40px; line-height: 1.15; color: #075BA8">Nộp bài thành công</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A6584; max-width: 520px">Bài dự thi của bạn đã được hệ thống ghi nhận. Biên nhận đã được gửi tới [email@example.com].</p>
+      <dl style="margin: 8px 0 0; width: 100%; max-width: 520px; text-align: left">
+        <div class="kv"><dt>MÃ HỒ SƠ</dt><dd style="font-size: 22px; font-weight: 800; color: #075BA8; letter-spacing: 0.04em">[HS-000123]</dd></div>
+        <div class="kv"><dt>THỜI ĐIỂM HỆ THỐNG GHI NHẬN</dt><dd>14:52:07 · 18/11/2026 (giờ máy chủ)</dd></div>
+        <div class="kv"><dt>TÁC PHẨM</dt><dd>[Tên video dự thi] · Hạng mục 01 – Công nghệ số và sáng tạo số</dd></div>
+        <div class="kv"><dt>NGƯỜI DỰ THI</dt><dd>Nhóm 2 thành viên · Trưởng nhóm [Nguyễn Văn A]</dd></div>
+      </dl>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px">
+        <a href="#" style="min-height: 48px; display: inline-flex; align-items: center; gap: 8px; padding: 0 20px; border-radius: 12px; border: 1.5px solid #075BA8; color: #075BA8; font-weight: 700; font-size: 15px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>Tải biên nhận (PDF)</a>
+        <a href="BaiCuaToi.dc.html" style="min-height: 48px; display: inline-flex; align-items: center; padding: 0 22px; border-radius: 12px; background: #075BA8; color: #FFFFFF; font-weight: 700; font-size: 15px; text-decoration: none">Xem bài dự thi của tôi</a>
+      </div>
+    </div>
+    
+  </section>
+</sc-if>
+
+<!-- ======== XEM LẠI & CAM KẾT ======== -->
+<sc-if value="{{notSubmitted}}" hint-placeholder-val="{{true}}">
+<section style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+
+  <nav aria-label="Các bước nộp bài" style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px">
+    <h2 style="margin: 0 0 18px; font-size: 20px; color: #075BA8">Nộp bài dự thi</h2>
+    <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+        <li style="display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 12px; background: {{s.bg}}">
+          <sc-if value="{{s.done}}" hint-placeholder-val="{{false}}"><span class="dot" style="background: #075BA8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FCEB87" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span></sc-if>
+          <sc-if value="{{s.current}}" hint-placeholder-val="{{false}}"><span class="dot" style="background: #FCEB87; color: #075BA8">{{s.n}}</span></sc-if>
+          <sc-if value="{{s.todo}}" hint-placeholder-val="{{true}}"><span class="dot" style="border: 2px solid #9FD1F6; color: #4A6584; font-weight: 700">{{s.n}}</span></sc-if>
+          <span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: {{s.w}}; color: {{s.c}}">{{s.t}}</span><span style="font-size: 12px; color: #4A6584">{{s.sub}}</span></span>
+        </li>
+      </sc-for>
+    </ol>
+  </nav>
+
+  <div style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">BƯỚC 5 / 5</span>
+      <h1 style="margin: 0; font-size: 40px; line-height: 1.15; color: #075BA8">Xem lại và cam kết</h1>
+    </div>
+
+    
+
+    <!-- TÓM TẮT -->
+    <div style="background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px">
+      <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+        <div style="aspect-ratio: 16 / 9; border-radius: 14px; background: #9FD1F6; display: flex; align-items: center; justify-content: center; position: relative">
+          <span style="width: 52px; height: 52px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#075BA8" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+          <span style="position: absolute; right: 10px; bottom: 10px; background: rgba(7, 91, 168, 0.88); color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 3px 7px; border-radius: 6px">1:24</span>
+        </div>
+        <span style="font-size: 13px; color: #4A6584">video_chon_nghe.mp4 · 142 MB · <a href="NopBai4.dc.html">Thay video</a></span>
+      </div>
+      <dl style="flex: 2 1 360px; min-width: 0; margin: 0">
+        <div class="kv" style="border-top: 0; padding-top: 0"><dt>TÊN VIDEO · <a href="#" style="letter-spacing: 0; font-weight: 600">Sửa</a></dt><dd class="serif" style="font-size: 19px; font-family: 'Lora', serif; font-weight: 700; color: #075BA8">[Tên video dự thi]</dd></div>
+        <div class="kv"><dt>HÌNH THỨC · HẠNG MỤC · MIỀN · <a href="NopBai1.dc.html" style="letter-spacing: 0; font-weight: 600">Sửa</a></dt><dd>Nhóm · 01 – Công nghệ số và sáng tạo số · Miền Nam</dd></div>
+        <div class="kv"><dt>CƠ SỞ GIÁO DỤC NGHỀ NGHIỆP</dt><dd>[Tên cơ sở GDNN], [Tỉnh/thành]</dd></div>
+        <div class="kv"><dt>NGƯỜI DỰ THI · <a href="NopBai.dc.html" style="letter-spacing: 0; font-weight: 600">Sửa</a></dt><dd>[Nguyễn Văn A] (trưởng nhóm) · CCCD •••• •••• 1234<br>[Trần Thị B] · CCCD •••• •••• 5678</dd></div>
+        <div class="kv"><dt>GIỚI THIỆU</dt><dd style="font-weight: 400">[Đoạn giới thiệu 128/150 từ, hiển thị 2 dòng đầu…]</dd></div>
+        <div class="kv"><dt>NGÔN NGỮ · KHAI BÁO AI</dt><dd>Tiếng Việt, có phụ đề · Có dùng AI: tạo phụ đề tự động</dd></div>
+      </dl>
+    </div>
+
+    <!-- ĐỒNG Ý CỦA NGƯỜI ĐẠI DIỆN -->
+    <sc-if value="{{guardianOk}}" hint-placeholder-val="{{true}}">
+      
+    </sc-if>
+    <sc-if value="{{guardianPending}}" hint-placeholder-val="{{false}}">
+      <div role="alert" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; background: #FEF3F2; border: 1.5px solid #FDA29B; border-radius: 14px; padding: 14px 16px; font-size: 14px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B42318" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 7v6M12 17h.01"></path></svg>
+        <span style="flex: 1 1 320px"><strong style="color: #B42318">Chưa thể nộp bài.</strong> Người đại diện của [Trần Thị B] (dưới 18 tuổi) chưa xác nhận đồng ý.</span>
+        <button type="button" style="min-height: 40px; padding: 0 14px; border-radius: 10px; border: 1.5px solid #B42318; background: #FFFFFF; color: #B42318; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer">Gửi lại mã xác nhận</button>
+      </div>
+    </sc-if>
+
+    <!-- CAM KẾT -->
+    <fieldset style="margin: 0; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+      <legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Cam kết của người dự thi</legend>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px">
+        <h2 style="margin: 0; font-size: 22px; color: #075BA8">Cam kết của người dự thi</h2>
+        <span style="font-size: 13px; font-weight: 700; color: #075BA8">{{commitCount}}</span>
+      </div>
+      <sc-for list="{{commits}}" as="c" hint-placeholder-count="6">
+        <label style="display: flex; gap: 12px; align-items: flex-start; padding: 14px; border-radius: 12px; border: {{c.border}}; background: {{c.bg}}; cursor: pointer">
+          <input type="checkbox" checked="{{c.on}}" onChange="{{c.toggle}}" style="width: 20px; height: 20px; margin-top: 2px; accent-color: #075BA8; flex: 0 0 auto">
+          <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 700; color: #1E3A5F">{{c.t}}</span><span style="font-size: 13px; line-height: 1.5; color: #4A6584">{{c.d}}</span></span>
+        </label>
+      </sc-for>
+      
+    </fieldset>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 16px; padding: 14px 18px">
+      
+      <span style="margin-left: auto; display: flex; gap: 10px">
+        <a href="NopBai4.dc.html" style="min-height: 52px; display: inline-flex; align-items: center; padding: 0 20px; border-radius: 12px; border: 1.5px solid #075BA8; color: #075BA8; font-weight: 700; font-size: 15px; text-decoration: none">Quay lại</a>
+        <sc-if value="{{canSubmit}}" hint-placeholder-val="{{false}}">
+          <button type="button" onClick="{{submit}}" style="min-height: 52px; display: inline-flex; align-items: center; gap: 10px; padding: 0 28px; border-radius: 12px; border: 0; background: {{wDeep}}; color: #FFFFFF; font-family: inherit; font-weight: 800; font-size: 16px; box-shadow: 0 4px 0 #075BA8; cursor: pointer">Nộp bài dự thi<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+        </sc-if>
+        <sc-if value="{{cannotSubmit}}" hint-placeholder-val="{{true}}">
+          <button type="button" disabled="disabled" style="min-height: 52px; padding: 0 28px; border-radius: 12px; border: 0; background: #CAE5F6; color: #4A6584; font-family: inherit; font-weight: 800; font-size: 16px">Nộp bài dự thi</button>
+        </sc-if>
+      </span>
+    </div>
+  </div>
+</section>
+</sc-if>
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"guardian":{"editor":"enum","options":["Đã xác nhận","Chờ xác nhận"],"default":"Đã xác nhận"},"$preview":{"width":1440,"height":2100}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { on: { a: true, b: true, c: true, d: false, e: false, f: false }, submitted: false };
+  }
+  renderVals() {
+    const st = this.state;
+    const names = ['Hình thức & hạng mục', 'Người dự thi', 'Thông tin tác phẩm', 'Tải video', 'Xem lại & cam kết'];
+    const steps = names.map((t, i) => ({ n: String(i + 1), t, sub: i < 4 ? 'Đã hoàn tất' : 'Đang thực hiện', done: i < 4, current: i === 4, todo: false, bg: i === 4 ? '#CAE5F6' : 'transparent', w: i === 4 ? '800' : '700', c: i === 4 ? '#075BA8' : '#1E3A5F' }));
+    const defs = [
+      { id: 'a', t: 'Tính trung thực', d: 'Video do tôi/nhóm trực tiếp xây dựng; nội dung cốt lõi thể hiện quan điểm, trải nghiệm hoặc nghiên cứu của chúng tôi. Thông tin khai báo là chính xác.' },
+      { id: 'b', t: 'Chưa đạt giải ở cuộc thi khác', d: 'Tính đến thời điểm nộp bài, video chưa đạt giải tại bất kỳ cuộc thi nào khác.' },
+      { id: 'c', t: 'Quyền tác giả và quyền liên quan', d: 'Hình ảnh, âm nhạc, trích đoạn, dữ liệu của bên thứ ba trong video đều có quyền sử dụng hợp pháp. Tôi/nhóm tự giải quyết khiếu nại phát sinh.' },
+      { id: 'd', t: 'Quyền hình ảnh', d: 'Những người xuất hiện trong video đã đồng ý cho sử dụng hình ảnh, giọng nói của họ.' },
+      { id: 'e', t: 'Cấp quyền sử dụng tác phẩm cho Ban Tổ chức', d: 'Đồng ý cấp quyền sử dụng không độc quyền, không thu phí để đăng tải, trình chiếu, biên tập kỹ thuật, thêm phụ đề, trích đoạn và làm học liệu. Ban Tổ chức ghi tên tác giả và không làm sai lệch nội dung cốt lõi.' },
+      { id: 'f', t: 'Đồng ý xử lý dữ liệu cá nhân', d: 'Đồng ý để Ban Tổ chức xử lý dữ liệu cá nhân trong phạm vi quản lý hồ sơ, xác minh, chấm thi, công bố kết quả, trao giải và truyền thông của cuộc thi.' }
+    ];
+    const commits = defs.map((c) => ({
+      ...c,
+      on: !!st.on[c.id],
+      border: st.on[c.id] ? '1.5px solid #309FF9' : '1.5px solid #CAE5F6',
+      bg: st.on[c.id] ? '#F1F8FB' : '#FFFFFF',
+      toggle: () => this.setState({ on: { ...st.on, [c.id]: !st.on[c.id] } })
+    }));
+    const done = defs.filter((c) => st.on[c.id]).length;
+    const guardianOk = (this.props.guardian ?? 'Đã xác nhận') === 'Đã xác nhận';
+    const canSubmit = done === defs.length && guardianOk;
+    return {
+      steps, commits,
+      commitCount: done + '/' + defs.length + ' đã đồng ý',
+      guardianOk, guardianPending: !guardianOk,
+      canSubmit, cannotSubmit: !canSubmit,
+      footNote: canSubmit ? 'Sẵn sàng nộp bài' : (guardianOk ? 'Cần đồng ý đủ ' + defs.length + ' cam kết để nộp bài' : 'Chờ người đại diện xác nhận'),
+      wDeep: '#C2410C',
+      submitted: st.submitted, notSubmitted: !st.submitted,
+      headStatus: st.submitted ? 'Đã nộp' : 'Bản nháp',
+      submit: () => this.setState({ submitted: true }),
+      back: () => this.setState({ submitted: false })
+    };
+  }
+}
+</script>
+<script src="assets/dc-lite.js"></script>
+</body>
+</html>

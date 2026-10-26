@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chọn nghề, Chọn tương lai – Cổng thi (bản demo)</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#F1F8FB;color:#1E3A5F}
+main{max-width:960px;margin:0 auto;padding:40px 16px 64px}
+h1{font-family:'Lora',Georgia,serif;color:#075BA8;font-size:32px;margin:0 0 8px}
+p{margin:0 0 24px;color:#4A6584;line-height:1.6}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+section{background:#fff;border:1px solid #CAE5F6;border-radius:16px;padding:20px}
+h2{font-size:13px;letter-spacing:.12em;color:#075BA8;margin:0 0 12px}
+a{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #CAE5F6;color:#1E3A5F;text-decoration:none;font-weight:600}
+a:hover{color:#075BA8}
+a span{color:#4A6584;font-weight:400;font-size:13px}
+.go{display:inline-flex;margin:0 0 24px;padding:12px 18px;border-radius:12px;background:#C2410C;color:#fff;border:0;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+  <h1>Cổng thi “Chọn nghề, Chọn tương lai” 2026</h1>
+  <p>Bản demo giao diện phía người tham gia. Dữ liệu là dữ liệu minh họa, chưa nối backend.</p>
+  <a class="go" id="auto" href="Main.dc.html">Mở trang chủ (tự chọn web / mobile theo màn hình) →</a>
+  <div class="cols">
+    <section>
+      <h2>GIAO DIỆN WEB</h2>
+      <a href="Main.dc.html">Trang chủ</a>
+      <a href="BinhChon.dc.html">Video dự thi – Bình chọn</a>
+      <a href="NopBai1.dc.html">Nộp bài – Bước 1 <span>Hình thức, hạng mục</span></a>
+      <a href="NopBai.dc.html">Nộp bài – Bước 2 <span>Thông tin tác giả</span></a>
+      <a href="NopBai3.dc.html">Nộp bài – Bước 3 <span>Thông tin tác phẩm</span></a>
+      <a href="NopBai4.dc.html">Nộp bài – Bước 4 <span>Tải video</span></a>
+      <a href="NopBai5.dc.html">Nộp bài – Bước 5 <span>Xem lại, cam kết</span></a>
+      <a href="BaiCuaToi.dc.html">Bài dự thi của tôi</a>
+    </section>
+    <section>
+      <h2>GIAO DIỆN MOBILE</h2>
+      <a href="MainMobile.dc.html">Trang chủ</a>
+      <a href="BinhChonMobile.dc.html">Video dự thi – Bình chọn</a>
+      <a href="NopBai1Mobile.dc.html">Nộp bài – Bước 1</a>
+      <a href="NopBaiMobile.dc.html">Nộp bài – Bước 2</a>
+      <a href="NopBai3Mobile.dc.html">Nộp bài – Bước 3</a>
+      <a href="NopBai4Mobile.dc.html">Nộp bài – Bước 4</a>
+      <a href="NopBai5Mobile.dc.html">Nộp bài – Bước 5</a>
+      <a href="BaiCuaToiMobile.dc.html">Bài dự thi của tôi</a>
+    </section>
+  </div>
+</main>
+<script>
+  document.getElementById('auto').href = window.innerWidth <= 768 ? 'MainMobile.dc.html' : 'Main.dc.html';
+</script>
+</body>
+</html>

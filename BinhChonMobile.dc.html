@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bình chọn Top 30 – mobile</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#F1F8FB;color:#1E3A5F}
+h1,h2,h3,.serif{font-family:'Lora',Georgia,serif;font-weight:700}
+a{color:#075BA8}a:hover{color:#05447E}
+*{box-sizing:border-box}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div style="width: 100%; background: #F1F8FB; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #1E3A5F">
+
+<!-- HEADER MOBILE -->
+<header style="background: #FFFFFF; border-bottom: 1px solid #CAE5F6">
+  <div style="padding: 10px 16px; display: flex; align-items: center; gap: 10px">
+    <a href="MainMobile.dc.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; min-width: 0; flex: 1 1 auto">
+      <img src="assets/img/logo-gdtd.png" alt="Báo Giáo dục và Thời đại" style="height: 32px; width: auto; display: block; flex: 0 0 auto">
+      <span aria-hidden="true" style="width: 1px; height: 26px; background: #CAE5F6; flex: 0 0 auto"></span>
+      <span class="serif" style="font-size: 15px; font-weight: 700; color: #075BA8; line-height: 1.2">Chọn nghề, Chọn tương lai</span>
+    </a>
+    <span aria-label="[Tên người dùng] · Đã xác thực" style="width: 36px; height: 36px; border-radius: 50%; background: #CAE5F6; color: #075BA8; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: 0 0 auto">A</span>
+    <button type="button" onClick="{{toggleMenu}}" aria-expanded="{{menuExpanded}}" aria-label="Mở menu" style="width: 44px; height: 44px; border-radius: 10px; border: 1.5px solid #CAE5F6; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
+  </div>
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+    <nav aria-label="Điều hướng chính" style="border-top: 1px solid #CAE5F6; padding: 8px 16px 16px; display: flex; flex-direction: column">
+      <a href="MainMobile.dc.html" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; color: #1E3A5F; text-decoration: none; padding-left: 16px">Trang chủ</a>
+      <a href="#" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; color: #1E3A5F; text-decoration: none; padding-left: 16px">Thể lệ</a>
+      <a href="#" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; font-weight: 700; color: #075BA8; text-decoration: none; border-left: 4px solid #FCEB87; padding-left: 12px">Video dự thi</a>
+      <a href="BaiCuaToiMobile.dc.html" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; color: #1E3A5F; text-decoration: none; padding-left: 16px">Bài dự thi của tôi</a>
+      <a href="#" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; color: #1E3A5F; text-decoration: none; padding-left: 16px">Thông báo</a>
+    </nav>
+  </sc-if>
+</header>
+
+<!-- TITLE -->
+<section style="position: relative; overflow: hidden; background: #CAE5F6">
+  <div aria-hidden="true" style="position: absolute; right: -110px; top: -120px; width: 260px; height: 260px; border-radius: 50%; background: #9FD1F6"></div>
+  <div style="position: relative; padding: 28px 16px; display: flex; flex-direction: column; gap: 10px">
+    <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">VIDEO DỰ THI · TOP 30</span>
+    <h1 style="margin: 0; font-size: 26px; font-weight: 700; color: #075BA8; line-height: 1.2">Bình chọn Video được yêu thích nhất</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #1E3A5F">30 video được Ban Giám khảo chọn từ vòng sơ khảo. Kết quả bình chọn chỉ dùng để trao giải Video được yêu thích nhất, không quy đổi thành điểm và không ảnh hưởng đến giải Nhất, Nhì, Ba.</p>
+  </div>
+</section>
+
+<!-- LƯỢT CÒN LẠI (gọn, đặt trên cùng ở mobile) -->
+<div style="padding: 16px 16px 0">
+  <div style="background: #075BA8; color: #FFFFFF; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+      <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #CAE5F6">Lượt bình chọn</span>
+      <span style="display: flex; align-items: baseline; gap: 4px"><span style="font-size: 30px; font-weight: 800; line-height: 1; color: {{wLight}}">{{remaining}}</span><span style="font-size: 14px; font-weight: 600">/ 5 lượt còn lại</span></span>
+    </div>
+    <div style="display: flex; gap: 6px" aria-hidden="true">
+      <sc-for list="{{dots}}" as="d" hint-placeholder-count="5">
+        <span style="flex: 1; height: 7px; border-radius: 4px; background: {{d.c}}"></span>
+      </sc-for>
+    </div>
+    
+  </div>
+</div>
+
+<!-- BODY -->
+<section style="padding: 16px 16px 40px; display: flex; flex-direction: column; gap: 16px">
+  <sc-if value="{{toast}}" hint-placeholder-val="{{false}}">
+    <div role="status" style="display: flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1.5px solid #309FF9; border-radius: 14px; padding: 12px 14px">
+      <span style="width: 30px; height: 30px; border-radius: 50%; background: #FCEB87; display: flex; align-items: center; justify-content: center; flex: 0 0 auto"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+      <span style="font-size: 14px; line-height: 1.45; color: #1E3A5F">{{toastText}}</span>
+    </div>
+  </sc-if>
+
+  <label style="display: flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1.5px solid #CAE5F6; border-radius: 12px; padding: 0 14px; min-height: 48px">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A6584" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+    <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Tìm video</span>
+    <input type="search" placeholder="Tìm theo mã bài, tên video, cơ sở" style="border: 0; outline: none; background: transparent; font-family: inherit; font-size: 15px; width: 100%; color: #1E3A5F">
+  </label>
+
+  <div role="tablist" aria-label="Lọc theo hạng mục" style="display: flex; gap: 8px; overflow-x: auto; margin: 0 -16px; padding: 0 16px 4px">
+    <sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+      <sc-if value="{{t.active}}" hint-placeholder-val="{{false}}">
+        <button type="button" role="tab" aria-selected="true" onClick="{{t.pick}}" style="flex: 0 0 auto; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid #075BA8; background: #075BA8; color: #FFFFFF; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap">{{t.label}}</button>
+      </sc-if>
+      <sc-if value="{{t.inactive}}" hint-placeholder-val="{{true}}">
+        <button type="button" role="tab" aria-selected="false" onClick="{{t.pick}}" style="flex: 0 0 auto; min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid #9FD1F6; background: #FFFFFF; color: #075BA8; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap">{{t.label}}</button>
+      </sc-if>
+    </sc-for>
+  </div>
+
+  
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+    <sc-for list="{{videos}}" as="v" hint-placeholder-count="6">
+      <article style="background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0">
+        <div style="display: flex; flex-direction: column">
+          <button type="button" onClick="{{v.open}}" aria-label="Xem video {{v.code}}" style="position: relative; display: block; width: 100%; aspect-ratio: 16 / 10; background: {{v.thumb}}; border: 0; padding: 0; overflow: hidden; cursor: pointer">
+            <img src="{{v.img}}" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+            <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
+              <span style="width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="#075BA8" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+            </span>
+            <span style="position: absolute; left: 6px; top: 6px; background: #075BA8; color: #FFFFFF; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 5px">{{v.code}}</span>
+            <span style="position: absolute; right: 6px; bottom: 6px; background: rgba(7, 91, 168, 0.88); color: #FFFFFF; font-size: 10px; font-weight: 600; padding: 2px 5px; border-radius: 5px">{{v.dur}}</span>
+          </button>
+        </div>
+        <div style="padding: 10px 10px 0; display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0">
+          <span style="align-self: flex-start; max-width: 100%; background: #F1F8FB; color: #075BA8; font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 999px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{v.cat}}</span>
+          <h3 onClick="{{v.open}}" style="margin: 0; font-size: 14px; font-weight: 700; line-height: 1.3; color: #1E3A5F; cursor: pointer; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden">{{v.title}}</h3>
+          <span style="font-size: 11px; line-height: 1.4; color: #4A6584; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden"><strong style="color: #1E3A5F; font-weight: 600">{{v.author}}</strong> · {{v.province}}</span>
+          <sc-if value="{{showVotes}}" hint-placeholder-val="{{false}}">
+            <span style="font-size: 12px; font-weight: 600; color: #075BA8">{{v.votesText}} lượt</span>
+          </sc-if>
+        </div>
+        <div style="padding: 8px 10px 10px; margin-top: auto">
+          <sc-if value="{{v.first}}" hint-placeholder-val="{{true}}">
+              <button type="button" onClick="{{v.vote}}" style="width: 100%; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; border-radius: 10px; border: 0; background: {{wDeep}}; color: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer; box-shadow: 0 3px 0 #075BA8"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"></path></svg>Bình chọn</button>
+            </sc-if>
+            <sc-if value="{{v.more}}" hint-placeholder-val="{{false}}">
+              <span style="display: flex; gap: 6px; width: 100%">
+                <span title="Lượt bạn đã dành cho video này" style="flex: 0 0 auto; min-height: 44px; display: inline-flex; align-items: center; gap: 4px; padding: 0 10px; border-radius: 10px; background: #CAE5F6; color: #075BA8; font-size: 13px; font-weight: 800"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>{{v.mine}}</span>
+                <button type="button" onClick="{{v.vote}}" aria-label="Bình chọn thêm 1 lượt cho {{v.code}}" style="flex: 1; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 4px; padding: 0 6px; border-radius: 10px; border: 0; background: {{wDeep}}; color: #FFFFFF; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer; box-shadow: 0 3px 0 #075BA8"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Thêm</button>
+              </span>
+            </sc-if>
+            <sc-if value="{{v.done}}" hint-placeholder-val="{{false}}">
+              <span style="width: 100%; min-height: 44px; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 14px; border-radius: 10px; background: #075BA8; color: #FFFFFF; font-size: 12px; font-weight: 800"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FCEB87" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Đã chọn · {{v.mine}}</span>
+            </sc-if>
+            <sc-if value="{{v.outOfVotes}}" hint-placeholder-val="{{false}}">
+              <button type="button" disabled="disabled" style="width: 100%; min-height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid #CAE5F6; background: #F1F8FB; color: #4A6584; font-family: inherit; font-size: 12px; font-weight: 600">Hết lượt bình chọn</button>
+            </sc-if>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+  <sc-if value="{{hasPages}}" hint-placeholder-val="{{true}}">
+    <nav aria-label="Phân trang video" style="display: flex; justify-content: center; gap: 8px; margin-top: 8px">
+      <button type="button" onClick="{{prevPage}}" aria-label="Trang trước" style="width: 44px; height: 44px; border-radius: 10px; border: 1.5px solid #CAE5F6; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{prevOp}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"></path></svg></button>
+      <sc-for list="{{pageBtns}}" as="pg" hint-placeholder-count="2">
+        <sc-if value="{{pg.on}}" hint-placeholder-val="{{false}}"><button type="button" aria-current="page" onClick="{{pg.go}}" style="width: 44px; height: 44px; border-radius: 10px; border: 0; background: #075BA8; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer">{{pg.n}}</button></sc-if>
+        <sc-if value="{{pg.off}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{pg.go}}" style="width: 44px; height: 44px; border-radius: 10px; border: 1.5px solid #CAE5F6; background: #FFFFFF; color: #075BA8; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">{{pg.n}}</button></sc-if>
+      </sc-for>
+      <button type="button" onClick="{{nextPage}}" aria-label="Trang sau" style="width: 44px; height: 44px; border-radius: 10px; border: 1.5px solid #CAE5F6; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: {{nextOp}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></button>
+    </nav>
+  </sc-if>
+
+  <!-- QUY CHẾ -->
+  <div style="background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 18px; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px; margin-top: 8px">
+    <h2 style="margin: 0; font-size: 18px; font-weight: 700; color: #075BA8">Quy chế bình chọn</h2>
+    <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px">
+      <li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5"><span style="width: 8px; height: 8px; border-radius: 50%; background: #309FF9; margin-top: 7px; flex: 0 0 auto"></span>Mỗi tài khoản tối đa 05 lượt bình chọn, có thể bình chọn hết 5 lượt cho 1 video hoặc cho bình chọn cho các video khác nhau.</li>
+      <li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5"><span style="width: 8px; height: 8px; border-radius: 50%; background: #309FF9; margin-top: 7px; flex: 0 0 auto"></span>Phải đăng nhập và hoàn tất bước xác thực của hệ thống.</li>
+      <li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5"><span style="width: 8px; height: 8px; border-radius: 50%; background: #309FF9; margin-top: 7px; flex: 0 0 auto"></span>Chỉ lượt hợp lệ sau đối soát được ghi nhận. Lượt tự động, tài khoản ảo, mua bán phiếu sẽ bị hủy; bài có thể bị loại.</li>
+      <li style="display: flex; gap: 10px; font-size: 14px; line-height: 1.5"><span style="width: 8px; height: 8px; border-radius: 50%; background: #309FF9; margin-top: 7px; flex: 0 0 auto"></span>Bằng phiếu: ưu tiên điểm sơ khảo cao hơn, sau đó bài nộp sớm hơn.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- POPUP XEM VIDEO (toàn màn hình trên mobile) -->
+<sc-if value="{{hasSel}}" hint-placeholder-val="{{false}}">
+  <div style="position: fixed; inset: 0; z-index: 50; background: #FFFFFF; overflow-y: auto">
+    <div role="dialog" aria-modal="true" aria-labelledby="vd-title-m" style="display: flex; flex-direction: column; min-height: 100%">
+      <div style="position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 10px; padding: 10px 12px 10px 16px; background: #FFFFFF; border-bottom: 1px solid #CAE5F6">
+        <span style="background: #075BA8; color: #FFFFFF; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; padding: 5px 10px; border-radius: 6px">{{sel.code}}</span>
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: #4A6584; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{sel.cat}}</span>
+        <button type="button" onClick="{{close}}" aria-label="Đóng" style="margin-left: auto; width: 44px; height: 44px; border-radius: 50%; border: 0; background: #F1F8FB; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </div>
+
+      <div style="background: #0B2A4A">
+        <div style="position: relative; aspect-ratio: 16 / 9">
+          <img src="{{sel.img}}" alt="Khung hình video {{sel.code}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+          <sc-if value="{{paused}}" hint-placeholder-val="{{true}}">
+            <span aria-hidden="true" style="position: absolute; inset: 0; background: rgba(11, 42, 74, 0.25)"></span>
+            <button type="button" onClick="{{togglePlay}}" aria-label="Phát video" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; border-radius: 50%; border: 0; background: rgba(255,255,255,0.95); display: flex; align-items: center; justify-content: center; cursor: pointer">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="#075BA8" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+            </button>
+          </sc-if>
+          <sc-if value="{{subOn}}" hint-placeholder-val="{{true}}">
+            <span style="position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); max-width: 88%; background: rgba(11, 42, 74, 0.82); color: #FFFFFF; font-size: 13px; line-height: 1.4; padding: 4px 10px; border-radius: 6px; text-align: center">{{sel.sub}}</span>
+          </sc-if>
+        </div>
+        <div style="display: flex; align-items: center; gap: 4px; padding: 4px 8px">
+          <button type="button" onClick="{{togglePlay}}" aria-label="{{playLabel}}" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer">
+            <sc-if value="{{paused}}" hint-placeholder-val="{{true}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></sc-if>
+            <sc-if value="{{playing}}" hint-placeholder-val="{{false}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></sc-if>
+          </button>
+          <span style="font-size: 12px; font-weight: 600; color: #FFFFFF; min-width: 72px">{{timeText}}</span>
+          <span aria-hidden="true" style="flex: 1; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.22); position: relative"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: {{progress}}; border-radius: 3px; background: #FF9A52"></span></span>
+          <button type="button" onClick="{{toggleSub}}" aria-pressed="{{subPressed}}" aria-label="Phụ đề" style="width: 44px; height: 44px; border: 0; background: transparent; cursor: pointer"><span style="border: 1.5px solid {{subColor}}; color: {{subColor}}; border-radius: 4px; padding: 1px 4px; font-size: 11px; font-weight: 800; font-family: inherit">CC</span></button>
+          <button type="button" aria-label="Toàn màn hình" style="width: 44px; height: 44px; border: 0; background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg></button>
+        </div>
+      </div>
+
+      <div style="padding: 20px 16px 24px; display: flex; flex-direction: column; gap: 14px; flex: 1">
+        <h2 id="vd-title-m" style="margin: 0; font-size: 20px; line-height: 1.3; color: #075BA8">{{sel.title}}</h2>
+        <div style="display: flex; flex-direction: column; gap: 4px; font-size: 14px">
+          <span><strong>{{sel.author}}</strong></span>
+          <span style="color: #4A6584">{{sel.school}} · {{sel.province}}</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">GIỚI THIỆU TÁC PHẨM</span>
+          <p style="margin: 0; font-size: 15px; line-height: 1.7">{{sel.intro}}</p>
+        </div>
+      </div>
+
+      <!-- Thanh bình chọn dính đáy -->
+      <div style="position: sticky; bottom: 0; background: #FFFFFF; border-top: 1px solid #CAE5F6; padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 13px; color: #4A6584; text-align: center">Bạn còn <strong style="color: #C2410C">{{remaining}}/5</strong> lượt<sc-if value="{{showVotes}}" hint-placeholder-val="{{false}}"><span style="font-weight: 700; color: #075BA8"> · {{sel.votesText}} lượt bình chọn</span></sc-if></span>
+        <sc-if value="{{sel.first}}" hint-placeholder-val="{{true}}">
+              <button type="button" onClick="{{sel.vote}}" style="width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 24px; border-radius: 12px; border: 0; background: {{wDeep}}; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 0 #075BA8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"></path></svg>Bình chọn</button>
+            </sc-if>
+            <sc-if value="{{sel.more}}" hint-placeholder-val="{{false}}">
+              <button type="button" onClick="{{sel.vote}}" style="width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 24px; border-radius: 12px; border: 0; background: {{wDeep}}; color: #FFFFFF; font-family: inherit; font-size: 16px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 0 #075BA8"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Bình chọn thêm 1 lượt</button>
+              <span style="font-size: 14px; font-weight: 700; color: #075BA8; text-align: center">Bạn đã dành {{sel.mine}} lượt cho video này</span>
+            </sc-if>
+            <sc-if value="{{sel.done}}" hint-placeholder-val="{{false}}">
+              <span style="width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 14px; border-radius: 12px; background: #075BA8; color: #FFFFFF; font-size: 15px; font-weight: 800"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCEB87" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Đã bình chọn · {{sel.mine}}</span>
+            </sc-if>
+            <sc-if value="{{sel.outOfVotes}}" hint-placeholder-val="{{false}}">
+              <button type="button" disabled="disabled" style="width: 100%; min-height: 52px; padding: 0 14px; border-radius: 12px; border: 1px solid #CAE5F6; background: #F1F8FB; color: #4A6584; font-family: inherit; font-size: 15px; font-weight: 600">Hết lượt bình chọn</button>
+            </sc-if>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"showVotes":{"editor":"boolean","default":false},"previewPopup":{"editor":"boolean","default":false},"perPage":{"editor":"int","min":6,"max":30,"default":15},"warm":{"editor":"enum","options":["Cam","San hô","Đỏ gạch"],"default":"Cam"},"$preview":{"width":390,"height":6600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'all', page: 1, voted: {}, last: '', open: null, playing: false, sub: true, menu: false };
+  }
+  renderVals() {
+    const warmMap = {
+      'Cam': { deep: '#C2410C', light: '#FF9A52', glow: 'rgba(255, 154, 82, 0.35)' },
+      'San hô': { deep: '#B93A32', light: '#FF9585', glow: 'rgba(255, 149, 133, 0.35)' },
+      'Đỏ gạch': { deep: '#A63A1F', light: '#F0A07A', glow: 'rgba(240, 160, 122, 0.35)' }
+    };
+    const warm = warmMap[this.props.warm ?? 'Cam'] || warmMap['Cam'];
+    const cats = [
+      { id: 'cn', short: 'Công nghệ số', prefix: 'CN' },
+      { id: 'kt', short: 'Kỹ thuật & SX xanh', prefix: 'KT' },
+      { id: 'dv', short: 'Dịch vụ & chăm sóc', prefix: 'DV' }
+    ];
+    const thumbs = ['#9FD1F6', '#6CB9F7', '#CAE5F6'];
+    const imgs = { cn: ['assets/img/cong-nghe-so-1.svg', 'assets/img/cong-nghe-so-2.svg'], kt: ['assets/img/ky-thuat-1.svg', 'assets/img/ky-thuat-2.svg'], dv: ['assets/img/dich-vu-1.svg', 'assets/img/dich-vu-2.svg', 'assets/img/dich-vu-3.svg'] };
+    const durs = ['01:12', '01:28', '01:05', '01:30', '01:19', '01:24', '01:01', '01:15', '01:22', '01:09'];
+    // Dữ liệu minh họa, giống bản desktop: [tên video, tác giả, cơ sở, tỉnh/thành, giới thiệu, phụ đề, số lượt]
+    const SAMPLE = {
+      cn: [
+        ['Dòng code từ bản làng', 'Lò Văn Hùng', 'Trường CĐ Kỹ thuật – Công nghệ Tây Bắc', 'Điện Biên', 'Em lớn lên ở một bản chưa có sóng điện thoại. Năm 17 tuổi em lần đầu chạm vào máy tính ở trường nghề và quyết định học lập trình. Video kể về ứng dụng nhỏ em viết để bà con trong bản tra giá ngô, giá chè mỗi sáng.', 'Ngày đầu tiên, em không biết bật máy tính.', 1842],
+        ['Chợ phiên lên mạng', 'Nhóm Sắc Màu Số (3 thành viên)', 'Trường CĐ Công nghệ Thông tin Duyên Hải', 'Quảng Ngãi', 'Ba đứa bạn cùng lớp thiết kế đồ họa giúp các cô bán hàng ở chợ phiên chụp ảnh sản phẩm, làm logo và mở gian hàng trực tuyến. Sau sáu tháng, mười hai hộ đã có đơn hàng đi tỉnh khác.', 'Cô Ba bán mắm, giờ có khách ở Hà Nội.', 2310],
+        ['Người gác cổng an ninh mạng', 'Phạm Minh Khang', 'Trường CĐ Kỹ thuật Phương Nam', 'TP. Hồ Chí Minh', 'Một lần tài khoản của mẹ bị lừa đảo chiếm mất, em bắt đầu tìm hiểu về an ninh mạng. Video cho thấy một ngày thực tập tại trung tâm giám sát an ninh của doanh nghiệp và năm thói quen ai cũng nên có.', 'Mật khẩu của bạn có đủ mạnh không?', 1576],
+        ['Vẽ tương lai bằng pixel', 'Nguyễn Thảo Vy', 'Trường Trung cấp Mỹ thuật Ứng dụng Sông Hàn', 'Đà Nẵng', 'Từ những bức vẽ bằng bút chì trên vở, em theo học thiết kế đồ họa và hiện làm minh họa cho một studio trò chơi. Video là hành trình hai năm học nghề kể bằng chính tranh vẽ của em.', 'Mỗi nét vẽ là một lần em thử lại.', 1298],
+        ['Kỹ sư dữ liệu tuổi 19', 'Trần Gia Bảo', 'Trường CĐ Công nghệ Bách Việt', 'Hà Nội', 'Không vào đại học, em chọn học khoa học dữ liệu ở trường cao đẳng và đi thực tập từ năm hai. Video giải thích công việc làm sạch dữ liệu bán hàng và vì sao doanh nghiệp đang rất cần người làm nghề này.', 'Dữ liệu bẩn thì kết luận cũng sai.', 987],
+        ['Tôi dạy AI nói tiếng Ê Đê', 'Nhóm Buôn Số (4 thành viên)', 'Trường CĐ Kỹ thuật Tây Nguyên', 'Đắk Lắk', 'Nhóm thu âm hơn hai nghìn câu tiếng Ê Đê để huấn luyện một mô hình nhận dạng giọng nói đơn giản, giúp người già trong buôn dùng điện thoại dễ hơn. Video có sử dụng AI để tạo phụ đề tự động và đã khai báo.', 'Ama ơi, máy đã hiểu tiếng mình rồi.', 2654],
+        ['Bàn tay nhỏ, con chip lớn', 'Đỗ Hoàng Nam', 'Trường CĐ Kỹ thuật Điện tử Bắc Ninh', 'Bắc Ninh', 'Em làm kỹ thuật viên kiểm thử vi mạch ở khu công nghiệp gần nhà. Video đưa người xem vào phòng sạch, nơi mỗi hạt bụi đều có thể làm hỏng cả lô sản phẩm.', 'Trong phòng sạch, không có chỗ cho sự vội vàng.', 1120],
+        ['Phòng game thành phòng lab', 'Nhóm 4 Bit (4 thành viên)', 'Trường CĐ Công nghệ Cần Thơ', 'Cần Thơ', 'Bốn đứa từng bị gọi là nghiện game. Giờ cả nhóm học lập trình trò chơi và vừa phát hành một game giáo dục giúp học sinh tiểu học học bảng cửu chương.', 'Chơi game cũng có thể là một nghề.', 1733],
+        ['Ứng dụng cho mẹ bán cà phê', 'Rơ Chăm Y Linh', 'Trường CĐ Kỹ thuật – Công nghệ Gia Lai', 'Gia Lai', 'Mẹ em bán cà phê bột ở chợ huyện. Em viết một ứng dụng ghi sổ bán hàng thay cho cuốn vở cũ, rồi chia sẻ cho các cô chú trong chợ dùng cùng.', 'Sổ của mẹ giờ nằm trong điện thoại.', 1405],
+        ['Từ thợ sửa điện thoại đến lập trình viên', 'Vũ Đức Trung', 'Trường CĐ Công nghệ Thái Nguyên', 'Thái Nguyên', 'Sáu năm sửa điện thoại thuê, anh quay lại trường học lập trình ở tuổi 26. Video là lời nhắn cho những ai nghĩ đã quá muộn để học một nghề mới.', 'Không bao giờ là quá muộn để bắt đầu.', 1189]
+      ],
+      kt: [
+        ['Nông trại thông minh của ba', 'Nguyễn Văn Lộc', 'Trường CĐ Nông nghiệp Công nghệ cao Đồng Tháp', 'Đồng Tháp', 'Ba em trồng xoài cả đời theo kinh nghiệm. Em học nghề tự động hóa và lắp hệ thống tưới bằng cảm biến độ ẩm cho vườn nhà, giúp tiết kiệm gần một nửa lượng nước mùa khô.', 'Ba nói: con học nghề này là đúng.', 2105],
+        ['Thợ hàn và những con tàu', 'Nhóm Lửa Xanh (3 thành viên)', 'Trường CĐ Kỹ thuật Hàng hải Hải Phòng', 'Hải Phòng', 'Ba bạn học nghề hàn đang thực tập tại một nhà máy đóng tàu. Video cho thấy nghề hàn hiện đại cần tay nghề, kỷ luật an toàn và cả chứng chỉ quốc tế.', 'Mỗi đường hàn là một lời cam kết.', 1450],
+        ['Tôi chọn sửa ô tô điện', 'Lê Quốc Huy', 'Trường CĐ Cơ điện Đồng Nai', 'Đồng Nai', 'Khi bạn bè chọn ngành kinh tế, em chọn công nghệ ô tô và theo hướng xe điện. Video giới thiệu công việc của kỹ thuật viên pin và hệ thống truyền động tại một xưởng dịch vụ.', 'Xe điện cũng cần người hiểu nó.', 1876],
+        ['Robot hái chè', 'Nhóm Đồi Chè (5 thành viên)', 'Trường CĐ Cơ khí Phú Thọ', 'Phú Thọ', 'Nhóm chế tạo mô hình robot hỗ trợ hái chè cho vùng đồi dốc, nơi người trẻ đã đi làm xa. Video ghi lại năm lần thử nghiệm thất bại trước khi robot đi được trên luống chè đầu tiên.', 'Lần thứ sáu, nó đã đứng vững.', 2477],
+        ['Cô gái đứng máy CNC', 'Hoàng Thị Mai', 'Trường CĐ Kỹ thuật Công nghiệp Hưng Yên', 'Hưng Yên', 'Lớp cơ khí của em có 32 người, chỉ có 2 bạn nữ. Video kể về công việc lập trình máy CNC và lý do em tin con gái cũng làm tốt nghề kỹ thuật.', 'Nghề không chọn giới tính.', 2032],
+        ['Điện mặt trời trên mái nhà quê', 'Huỳnh Tấn Lực', 'Trường CĐ Kỹ thuật Năng lượng Khánh Hòa', 'Khánh Hòa', 'Em cùng thầy hướng dẫn lắp hệ thống điện mặt trời cho trạm y tế xã. Video giải thích ngắn gọn cách tính công suất và vì sao nghề này đang thiếu thợ có tay nghề.', 'Nắng miền Trung giờ thành điện.', 1312],
+        ['Kỹ thuật viên điện gió', 'Trương Ngọc Sơn', 'Trường CĐ Kỹ thuật Quảng Trị', 'Quảng Trị', 'Làm việc ở độ cao 90 mét giữa gió biển, công việc của em là bảo trì tua-bin điện gió. Video quay bằng camera gắn mũ bảo hộ trong một ca làm việc.', 'Ở trên này, an toàn là số một.', 1654],
+        ['Lúa thông minh, nước tiết kiệm', 'Nhóm Phù Sa (3 thành viên)', 'Trường CĐ Kỹ thuật Nông nghiệp An Giang', 'An Giang', 'Nhóm áp dụng kỹ thuật tưới ướt khô xen kẽ có cảm biến mực nước cho ruộng lúa của gia đình. Số liệu năng suất trong video được ghi nguồn từ trạm khuyến nông địa phương.', 'Ruộng khô một chút, lúa lại khỏe hơn.', 1098],
+        ['Bảo trì thang máy – nghề trên cao', 'Phan Văn Tuấn', 'Trường CĐ Cơ điện Hà Nội', 'Hà Nội', 'Mỗi ngày có hàng nghìn người đi thang máy mà không nghĩ tới người bảo trì. Video theo chân em trong một buổi kiểm tra định kỳ tại tòa chung cư 30 tầng.', 'Bạn có biết ai giữ cho thang máy chạy êm?', 876],
+        ['Tái chế nhựa thành gạch', 'Nhóm Xanh Mãi (4 thành viên)', 'Trường CĐ Công nghệ Môi trường Ninh Bình', 'Ninh Bình', 'Nhóm thu gom nhựa phế thải ở khu du lịch và ép thành gạch lát vỉa hè. Video giới thiệu quy trình và nghề kỹ thuật viên môi trường.', 'Rác hôm nay, đường đi ngày mai.', 1967]
+      ],
+      dv: [
+        ['Một ngày làm điều dưỡng', 'Nguyễn Ngọc Ánh', 'Trường CĐ Y tế Huế', 'Huế', 'Em ghi lại một ca trực 12 tiếng tại khoa nhi khi đang thực tập năm cuối. Video có sự đồng ý của bệnh viện và gia đình người bệnh xuất hiện trong video.', 'Nụ cười của bé là phần thưởng lớn nhất.', 2789],
+        ['Bếp Việt ra thế giới', 'Trần Minh Tâm', 'Trường CĐ Du lịch Sài Gòn', 'TP. Hồ Chí Minh', 'Từ phụ bếp ở quán cơm gia đình, em học nghề kỹ thuật chế biến món ăn và đang làm tại một nhà hàng phục vụ khách quốc tế. Video là món bún cá quê ngoại được trình bày theo phong cách mới.', 'Món quê, nhưng ai cũng muốn thử.', 2240],
+        ['Người dẫn đường xứ Mường', 'Bùi Thị Hoa', 'Trường CĐ Văn hóa Du lịch Thanh Hóa', 'Thanh Hóa', 'Em là hướng dẫn viên du lịch cộng đồng ở bản người Mường. Video kể về việc giữ gìn văn hóa bản địa song song với làm du lịch.', 'Khách đến bản, em kể chuyện bản mình.', 1532],
+        ['Logistics – nghề không ngủ', 'Nhóm Kho Vận 24/7 (2 thành viên)', 'Trường CĐ Logistics Đồng Nai', 'Đồng Nai', 'Hai bạn thực tập tại một trung tâm phân phối hàng thương mại điện tử. Video giải thích đơn hàng đi từ kho tới tay người mua trong vòng 24 giờ như thế nào.', 'Đơn hàng của bạn đã đi qua tay chúng tôi.', 1287],
+        ['Bàn tay chăm sóc người già', 'Lâm Thu Hà', 'Trường CĐ Y tế Vĩnh Long', 'Vĩnh Long', 'Em học nghề chăm sóc người cao tuổi và làm bán thời gian tại một viện dưỡng lão. Video nói về sự kiên nhẫn và kỹ năng mà nghề này đòi hỏi.', 'Ông bà cần người lắng nghe.', 1690],
+        ['Livestream bán đặc sản quê tôi', 'Nhóm Gió Nam (3 thành viên)', 'Trường CĐ Kinh tế – Kỹ thuật Cà Mau', 'Cà Mau', 'Nhóm học thương mại điện tử và mở kênh livestream bán khô cá, mật ong rừng của bà con. Video chia sẻ cả những phiên không có người xem.', 'Phiên đầu tiên chỉ có ba người xem.', 1845],
+        ['Thợ làm tóc có bằng cao đẳng', 'Đinh Thị Yến', 'Trường CĐ Kỹ thuật Nghệ An', 'Nghệ An', 'Nhiều người nghĩ làm tóc không cần học trường lớp. Em kể về chương trình học bài bản, từ hóa chất an toàn tới tư vấn khách hàng.', 'Nghề đẹp cũng cần học đến nơi.', 1163],
+        ['Tiếp viên mặt đất', 'Mai Anh Thư', 'Trường CĐ Du lịch Đà Nẵng', 'Đà Nẵng', 'Em thực tập tại quầy làm thủ tục ở sân bay. Video cho thấy một ngày làm việc với hàng trăm hành khách và những tình huống cần bình tĩnh xử lý.', 'Chuyến bay của bạn bắt đầu từ quầy này.', 1408],
+        ['Homestay của chàng trai Tày', 'Nông Văn Thắng', 'Trường CĐ Kỹ thuật Cao Bằng', 'Cao Bằng', 'Học xong nghề quản trị khách sạn, em về quê mở homestay nhỏ cạnh thác. Video kể chuyện em cùng người trong bản đón đoàn khách nước ngoài đầu tiên.', 'Nhà sàn của ông giờ đón khách xa.', 2018],
+        ['Bếp trưởng 20 tuổi', 'Lý Gia Hân', 'Trường CĐ Du lịch Cần Thơ', 'Cần Thơ', 'Em trở thành bếp phó ở tuổi 20 sau hai năm học nghề và đi làm từ năm nhất. Video là một buổi tối bận rộn nhất trong bếp nhà hàng.', 'Trong bếp, mọi giây đều quan trọng.', 1511]
+      ]
+    };
+    const all = [];
+    cats.forEach((c, ci) => {
+      for (let i = 1; i <= 10; i++) {
+        const code = c.prefix + '-' + String(i).padStart(3, '0');
+        const d = SAMPLE[c.id][i - 1];
+        all.push({ code, catId: c.id, cat: c.short, dur: durs[i - 1], thumb: thumbs[(i + ci) % 3], img: imgs[c.id].at(i % imgs[c.id].length), title: d[0], author: d[1], school: d[2], province: d[3], intro: d[4], sub: d[5], votesText: d[6].toLocaleString('vi-VN') });
+      }
+    });
+    const st = this.state;
+    const voted = st.voted || {};
+    // Mỗi tài khoản tối đa 05 lượt; được dồn nhiều lượt cho 1 video hoặc chia cho tối đa 05 video (mô tả kỹ thuật mục 8)
+    const used = Object.values(voted).reduce((a, b) => a + b, 0);
+    const remaining = Math.max(0, 5 - used);
+    const list = st.tab === 'all' ? all : all.filter((v) => v.catId === st.tab);
+    const PER = this.props.perPage ?? 15;
+    const pages = Math.max(1, Math.ceil(list.length / PER));
+    const page = Math.min(st.page || 1, pages);
+    const allMk = list.map((v) => {
+      const mine = voted[v.code] || 0;
+      return {
+        ...v,
+        mine: String(mine),
+        first: mine === 0 && remaining > 0,
+        more: mine > 0 && remaining > 0,
+        done: mine > 0 && remaining <= 0,
+        outOfVotes: mine === 0 && remaining <= 0,
+        vote: () => {
+          if (remaining <= 0) return;
+          this.setState({ voted: { ...voted, [v.code]: mine + 1 }, last: v.code });
+        },
+        open: () => this.setState({ open: v.code, playing: false })
+      };
+    });
+    const videos = allMk.slice((page - 1) * PER, page * PER);
+    const pageBtns = Array.from({ length: pages }, (_, i) => ({ n: String(i + 1), on: i + 1 === page, off: i + 1 !== page, go: () => this.setState({ page: i + 1 }) }));
+    const pageVals = {
+      pageBtns, hasPages: pages > 1,
+      prevPage: () => this.setState({ page: Math.max(1, page - 1) }), nextPage: () => this.setState({ page: Math.min(pages, page + 1) }),
+      prevOp: page === 1 ? '0.4' : '1', nextOp: page === pages ? '0.4' : '1'
+    };
+    const tabDefs = [{ id: 'all', label: 'Tất cả (30)' }].concat(cats.map((c) => ({ id: c.id, label: c.short + ' (10)' })));
+    const tabs = tabDefs.map((t) => ({ label: t.label, active: st.tab === t.id, inactive: st.tab !== t.id, pick: () => this.setState({ tab: t.id, page: 1 }) }));
+    const dots = [0, 1, 2, 3, 4].map((i) => ({ c: i < remaining ? warm.light : 'rgba(255,255,255,0.22)' }));
+    const openCode = st.open || ((this.props.previewPopup ?? false) ? videos.at(1).code : null);
+    const selRaw = openCode ? allMk.find((v) => v.code === openCode) : null;
+    const pos = st.playing ? 24 : 0;
+    const menu = st.menu;
+    return {
+      menuOpen: menu,
+      menuExpanded: menu ? 'true' : 'false',
+      toggleMenu: () => this.setState({ menu: !menu }),
+      hasSel: !!selRaw,
+      sel: selRaw || {},
+      close: () => this.setState({ open: null, playing: false }),
+      paused: !st.playing, playing: st.playing,
+      playLabel: st.playing ? 'Tạm dừng' : 'Phát video',
+      togglePlay: () => this.setState({ playing: !st.playing, open: openCode }),
+      timeText: '0:' + String(pos).padStart(2, '0') + ' / ' + (selRaw ? selRaw.dur.replace(/^0/, '') : ''),
+      progress: Math.round(pos / 88 * 100) + '%',
+      subOn: st.sub, subPressed: st.sub ? 'true' : 'false', subColor: st.sub ? '#FCEB87' : '#FFFFFF',
+      toggleSub: () => this.setState({ sub: !st.sub, open: openCode }),
+      tabs,
+      videos,
+      remaining: String(remaining),
+      dots,
+      wDeep: warm.deep,
+      wLight: warm.light,
+      showVotes: !!(this.props.showVotes ?? false),
+      countText: 'Hiển thị ' + ((page - 1) * PER + 1) + '–' + ((page - 1) * PER + videos.length) + ' / ' + list.length + ' video',
+      ...pageVals,
+      toast: !!st.last,
+      toastText: st.last ? 'Đã ghi nhận 1 lượt cho ' + st.last + ' (bạn đã dành ' + (voted[st.last] || 0) + ' lượt cho video này). Bạn còn ' + remaining + '/5 lượt.' : ''
+    };
+  }
+}
+</script>
+<script src="assets/dc-lite.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nộp bài – Hình thức và hạng mục</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#F1F8FB;color:#1E3A5F}
+h1,h2,h3,.serif{font-family:'Lora',Georgia,serif;font-weight:700}
+a{color:#075BA8}a:hover{color:#05447E}
+*{box-sizing:border-box}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:#1E3A5F}
+.fld input,.fld select{min-height:46px;border:1.5px solid #CAE5F6;border-radius:10px;padding:0 12px;font-family:inherit;font-size:15px;font-weight:400;color:#1E3A5F;background:#FFFFFF;width:100%}
+.dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-weight:800}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div style="width: 100%; background: #F1F8FB; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #1E3A5F">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #CAE5F6">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px">
+    <a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+      <img src="assets/img/logo-gdtd.png" alt="Báo Giáo dục và Thời đại" style="height: 36px; width: auto; display: block">
+      <span aria-hidden="true" style="width: 1px; height: 28px; background: #CAE5F6"></span>
+      <span class="serif" style="font-size: 18px; font-weight: 700; color: #075BA8">Chọn nghề, Chọn tương lai</span>
+    </a>
+    <span style="font-size: 14px; color: #4A6584">Hồ sơ dự thi · <strong style="color: #075BA8">Bản nháp</strong></span>
+    
+  </div>
+</header>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+
+  <nav aria-label="Các bước nộp bài" style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px">
+    <h2 style="margin: 0 0 18px; font-size: 20px; color: #075BA8">Nộp bài dự thi</h2>
+    <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+        <li style="display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 12px; background: {{s.bg}}">
+          <sc-if value="{{s.done}}" hint-placeholder-val="{{false}}"><span class="dot" style="background: #075BA8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FCEB87" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span></sc-if>
+          <sc-if value="{{s.current}}" hint-placeholder-val="{{false}}"><span class="dot" style="background: #FCEB87; color: #075BA8">{{s.n}}</span></sc-if>
+          <sc-if value="{{s.todo}}" hint-placeholder-val="{{true}}"><span class="dot" style="border: 2px solid #9FD1F6; color: #4A6584; font-weight: 700">{{s.n}}</span></sc-if>
+          <span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: {{s.w}}; color: {{s.c}}">{{s.t}}</span><span style="font-size: 12px; color: #4A6584">{{s.sub}}</span></span>
+        </li>
+      </sc-for>
+    </ol>
+    <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid #CAE5F6; font-size: 13px; line-height: 1.5; color: #4A6584">Thông tin được lưu tự động. Bài chỉ được ghi nhận khi bạn bấm <strong>Nộp bài</strong> ở bước 5.</div>
+  </nav>
+
+  <div style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">BƯỚC 1 / 5</span>
+      <h1 style="margin: 0; font-size: 40px; line-height: 1.15; color: #075BA8">Hình thức và hạng mục dự thi</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A6584">Mỗi cá nhân hoặc nhóm nộp 01 video và đăng ký 01 hạng mục.</p>
+    </div>
+
+    <!-- HÌNH THỨC -->
+    <fieldset style="margin: 0; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+      <legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Hình thức dự thi</legend>
+      <h2 style="margin: 0; font-size: 20px; color: #075BA8">Hình thức dự thi *</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+        <sc-for list="{{forms}}" as="f" hint-placeholder-count="2">
+          <button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="text-align: left; min-height: 88px; padding: 18px; border-radius: 14px; border: {{f.border}}; background: {{f.bg}}; font-family: inherit; cursor: pointer; display: flex; gap: 14px; align-items: center">
+            <span style="width: 22px; height: 22px; border-radius: 50%; border: 2px solid #075BA8; display: flex; align-items: center; justify-content: center; flex: 0 0 auto"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{f.dot}}"></span></span>
+            <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 17px; font-weight: 700; color: #075BA8">{{f.t}}</span><span style="font-size: 13px; color: #4A6584; line-height: 1.45">{{f.d}}</span></span>
+          </button>
+        </sc-for>
+      </div>
+    </fieldset>
+
+    <!-- HẠNG MỤC -->
+    <fieldset style="margin: 0; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+      <legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Hạng mục dự thi</legend>
+      <h2 style="margin: 0; font-size: 20px; color: #075BA8">Hạng mục dự thi *</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+        <sc-for list="{{cats}}" as="c" hint-placeholder-count="3">
+          <button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="text-align: left; padding: 18px; border-radius: 14px; border: {{c.border}}; background: {{c.bg}}; font-family: inherit; cursor: pointer; display: flex; flex-direction: column; gap: 8px">
+            <span style="display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">HẠNG MỤC {{c.no}}</span><span style="width: 22px; height: 22px; border-radius: 50%; border: 2px solid #075BA8; display: flex; align-items: center; justify-content: center"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{c.dot}}"></span></span></span>
+            <span class="serif" style="font-size: 18px; font-weight: 700; color: #075BA8; line-height: 1.3">{{c.name}}</span>
+            <span style="font-size: 13px; color: #4A6584; line-height: 1.5">{{c.jobs}}</span>
+          </button>
+        </sc-for>
+      </div>
+      
+    </fieldset>
+
+    <!-- MIỀN + CƠ SỞ -->
+    <div style="background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 20px; color: #075BA8">Miền *</h2>
+        <div role="radiogroup" aria-label="Miền" style="display: flex; flex-wrap: wrap; gap: 10px">
+          <sc-for list="{{regions}}" as="r" hint-placeholder-count="3">
+            <button type="button" role="radio" aria-checked="{{r.pressed}}" onClick="{{r.pick}}" style="min-height: 46px; padding: 0 22px; border-radius: 999px; border: {{r.border}}; background: {{r.bg}}; color: {{r.fg}}; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">{{r.t}}</button>
+          </sc-for>
+        </div>
+        
+      </div>
+
+      <div style="height: 1px; background: #CAE5F6"></div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 20px; color: #075BA8">Cơ sở giáo dục nghề nghiệp *</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+          <label class="fld">Tỉnh / thành phố của cơ sở *<select><option>[Chọn tỉnh/thành]</option></select></label>
+          <label class="fld">Tên cơ sở *<input type="search" placeholder="Gõ để tìm tên trường, cao đẳng, trung cấp, trung tâm…"></label>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: flex-start; background: #F1F8FB; border-radius: 12px; padding: 14px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 1px"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"></path></svg>
+          <span style="font-size: 14px; line-height: 1.55">Khai <strong>một cơ sở cho cả bài dự thi</strong>. Nếu bài vào Top 30, cơ sở này sẽ ký giấy xác nhận theo mẫu của Ban Tổ chức. Với bài nhóm, chọn cơ sở nơi trưởng nhóm học tập hoặc công tác.</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 16px; padding: 14px 18px">
+      
+      <span style="margin-left: auto; display: flex; gap: 10px">
+        <a href="NopBai.dc.html" style="min-height: 48px; display: inline-flex; align-items: center; gap: 8px; padding: 0 22px; border-radius: 12px; background: #075BA8; color: #FFFFFF; font-weight: 700; font-size: 15px; text-decoration: none"><span>Tiếp tục: Thông tin tác giả</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCEB87" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+      </span>
+    </div>
+  </div>
+</section>
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { form: 'group', cat: 'cn', region: 'nam' };
+  }
+  renderVals() {
+    const st = this.state;
+    const on = { border: '2px solid #075BA8', bg: '#CAE5F6', dot: '#075BA8', pressed: 'true' };
+    const off = { border: '1.5px solid #CAE5F6', bg: '#FFFFFF', dot: 'transparent', pressed: 'false' };
+    const names = ['Hình thức & hạng mục', 'Người dự thi', 'Thông tin tác phẩm', 'Tải video', 'Xem lại & cam kết'];
+    const steps = names.map((t, i) => ({ n: String(i + 1), t, sub: i === 0 ? 'Đang khai' : '', done: false, current: i === 0, todo: i > 0, bg: i === 0 ? '#CAE5F6' : 'transparent', w: i === 0 ? '800' : '600', c: i === 0 ? '#075BA8' : '#4A6584' }));
+    const forms = [
+      { id: 'solo', t: 'Cá nhân', d: 'Bạn tự đứng tên bài dự thi' },
+      { id: 'group', t: 'Nhóm 02–05 người', d: '01 trưởng nhóm, tối đa 02 người đại diện dự chung kết' }
+    ].map((f) => ({ ...f, ...(st.form === f.id ? on : off), pick: () => this.setState({ form: f.id }) }));
+    const cats = [
+      { id: 'cn', no: '01', name: 'Công nghệ số và sáng tạo số', jobs: 'CNTT, lập trình, AI, dữ liệu, an ninh mạng, đồ họa, vi mạch' },
+      { id: 'kt', no: '02', name: 'Kỹ thuật, công nghệ và sản xuất xanh – thông minh', jobs: 'Cơ khí, tự động hóa, điện – điện tử, ô tô, năng lượng, nông nghiệp CNC' },
+      { id: 'dv', no: '03', name: 'Dịch vụ hiện đại và chăm sóc con người', jobs: 'Logistics, TMĐT, du lịch, nhà hàng, điều dưỡng, chăm sóc sắc đẹp' }
+    ].map((c) => ({ ...c, ...(st.cat === c.id ? on : off), pick: () => this.setState({ cat: c.id }) }));
+    const regions = [{ id: 'bac', t: 'Miền Bắc' }, { id: 'trung', t: 'Miền Trung' }, { id: 'nam', t: 'Miền Nam' }].map((r) => ({
+      ...r,
+      pressed: st.region === r.id ? 'true' : 'false',
+      border: st.region === r.id ? '2px solid #075BA8' : '1.5px solid #9FD1F6',
+      bg: st.region === r.id ? '#075BA8' : '#FFFFFF',
+      fg: st.region === r.id ? '#FFFFFF' : '#075BA8',
+      pick: () => this.setState({ region: r.id })
+    }));
+    return { steps, forms, cats, regions };
+  }
+}
+</script>
+<script src="assets/dc-lite.js"></script>
+</body>
+</html>

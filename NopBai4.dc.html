@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nộp bài – Tải video</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#F1F8FB;color:#1E3A5F}
+h1,h2,h3,.serif{font-family:'Lora',Georgia,serif;font-weight:700}
+a{color:#075BA8}a:hover{color:#05447E}
+*{box-sizing:border-box}
+.dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-weight:800}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div style="width: 100%; background: #F1F8FB; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #1E3A5F">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #CAE5F6">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px">
+    <a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+      <img src="assets/img/logo-gdtd.png" alt="Báo Giáo dục và Thời đại" style="height: 36px; width: auto; display: block">
+      <span aria-hidden="true" style="width: 1px; height: 28px; background: #CAE5F6"></span>
+      <span class="serif" style="font-size: 18px; font-weight: 700; color: #075BA8">Chọn nghề, Chọn tương lai</span>
+    </a>
+    <span style="font-size: 14px; color: #4A6584">Hồ sơ dự thi · <strong style="color: #075BA8">Bản nháp</strong></span>
+    
+  </div>
+</header>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+
+  <nav aria-label="Các bước nộp bài" style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px">
+    <h2 style="margin: 0 0 18px; font-size: 20px; color: #075BA8">Nộp bài dự thi</h2>
+    <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="5">
+        <li style="display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 12px; background: {{s.bg}}">
+          <sc-if value="{{s.done}}" hint-placeholder-val="{{false}}"><span class="dot" style="background: #075BA8"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FCEB87" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span></sc-if>
+          <sc-if value="{{s.current}}" hint-placeholder-val="{{false}}"><span class="dot" style="background: #FCEB87; color: #075BA8">{{s.n}}</span></sc-if>
+          <sc-if value="{{s.todo}}" hint-placeholder-val="{{true}}"><span class="dot" style="border: 2px solid #9FD1F6; color: #4A6584; font-weight: 700">{{s.n}}</span></sc-if>
+          <span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: {{s.w}}; color: {{s.c}}">{{s.t}}</span><span style="font-size: 12px; color: #4A6584">{{s.sub}}</span></span>
+        </li>
+      </sc-for>
+    </ol>
+    <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid #CAE5F6; font-size: 13px; line-height: 1.5; color: #4A6584">Thông tin được lưu tự động. Bài chỉ được ghi nhận khi bạn bấm <strong>Nộp bài</strong> ở bước 5.</div>
+  </nav>
+
+  <div style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">BƯỚC 4 / 5</span>
+      <h1 style="margin: 0; font-size: 40px; line-height: 1.15; color: #075BA8">Tải video dự thi</h1>
+      <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A6584">Hệ thống kiểm tra tệp ngay khi bạn chọn, và kiểm tra lại trên máy chủ sau khi tải xong.</p>
+    </div>
+
+    <!-- YÊU CẦU -->
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+      <div style="background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #4A6584">ĐỊNH DẠNG</span><span style="font-size: 18px; font-weight: 800; color: #075BA8">MP4 hoặc MOV</span></div>
+      <div style="background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #4A6584">DUNG LƯỢNG</span><span style="font-size: 18px; font-weight: 800; color: #075BA8">Tối đa 300 MB</span></div>
+      <div style="background: #FCEB87; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #075BA8">THỜI LƯỢNG</span><span style="font-size: 18px; font-weight: 800; color: #075BA8">Từ 1:00 đến 1:30</span></div>
+    </div>
+
+    <!-- CHƯA CHỌN TỆP -->
+    <sc-if value="{{isEmpty}}" hint-placeholder-val="{{false}}">
+      <div style="background: #FFFFFF; border: 2px dashed #6CB9F7; border-radius: 20px; padding: 48px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+        <span style="width: 64px; height: 64px; border-radius: 50%; background: #CAE5F6; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"></path></svg></span>
+        <span class="serif" style="font-size: 22px; font-weight: 700; color: #075BA8">Kéo thả video vào đây</span>
+        <span style="font-size: 14px; color: #4A6584">hoặc</span>
+        <button type="button" onClick="{{toUploading}}" style="min-height: 48px; padding: 0 24px; border-radius: 12px; border: 0; background: #075BA8; color: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer">Chọn tệp từ máy</button>
+        <span style="font-size: 13px; color: #4A6584">Video dài hơn 1:30 hoặc ngắn hơn 1:00 sẽ không được chấm, kể cả phần mở đầu và kết thúc.</span>
+      </div>
+    </sc-if>
+
+    <!-- ĐANG TẢI -->
+    <sc-if value="{{isUploading}}" hint-placeholder-val="{{false}}">
+      <div style="background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px">
+          <span style="width: 48px; height: 48px; border-radius: 12px; background: #CAE5F6; display: flex; align-items: center; justify-content: center; flex: 0 0 auto"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m10 9 5 3-5 3z"></path></svg></span>
+          <span style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700">video_chon_nghe.mp4</span><span style="font-size: 13px; color: #4A6584">186 MB · Thời lượng 1:24 · Định dạng MP4</span></span>
+          <button type="button" onClick="{{toEmpty}}" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1.5px solid #9FD1F6; background: #FFFFFF; color: #075BA8; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Hủy</button>
+        </div>
+        <div role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Tiến độ tải lên" style="height: 12px; border-radius: 6px; background: #CAE5F6; overflow: hidden"><div style="width: 64%; height: 100%; background: #309FF9; border-radius: 6px"></div></div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 13px; color: #4A6584"><span><strong style="color: #075BA8">64%</strong> · 119 / 186 MB</span><span>Còn khoảng [x] phút · Mất mạng thì tự tải tiếp khi có kết nối</span></div>
+        <div style="display: flex; gap: 10px; align-items: center; font-size: 13px; color: #1E3A5F; background: #F1F8FB; border-radius: 10px; padding: 10px 12px">Giữ trang này mở cho đến khi tải xong.</div>
+      </div>
+    </sc-if>
+
+    <!-- CÓ TỆP: HỢP LỆ / LỖI -->
+    <sc-if value="{{hasFile}}" hint-placeholder-val="{{true}}">
+      <div style="background: #FFFFFF; border: {{cardBorder}}; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+        <sc-if value="{{isOk}}" hint-placeholder-val="{{false}}">
+          <div style="aspect-ratio: 16 / 9; max-height: 360px; border-radius: 14px; background: #9FD1F6; display: flex; align-items: center; justify-content: center; position: relative">
+            <span style="width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="#075BA8" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+            <span style="position: absolute; right: 12px; bottom: 12px; background: rgba(7, 91, 168, 0.88); color: #FFFFFF; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 6px">1:24</span>
+          </div>
+        </sc-if>
+
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px">
+          <span style="width: 48px; height: 48px; border-radius: 12px; background: {{iconBg}}; display: flex; align-items: center; justify-content: center; flex: 0 0 auto"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{iconFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m10 9 5 3-5 3z"></path></svg></span>
+          <span style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700">{{fileName}}</span><span style="font-size: 13px; color: #4A6584">{{fileMeta}}</span></span>
+          <button type="button" onClick="{{toUploading}}" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1.5px solid #075BA8; background: #FFFFFF; color: #075BA8; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">{{replaceLabel}}</button>
+        </div>
+
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+          <sc-for list="{{checks}}" as="k" hint-placeholder-count="3">
+            <li style="border-radius: 12px; padding: 12px 14px; background: {{k.bg}}; border: {{k.border}}; display: flex; flex-direction: column; gap: 4px">
+              <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: {{k.fg}}">
+                <sc-if value="{{k.ok}}" hint-placeholder-val="{{true}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+                <sc-if value="{{k.bad}}" hint-placeholder-val="{{false}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B42318" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></sc-if>
+                {{k.label}}
+              </span>
+              <span style="font-size: 16px; font-weight: 700; color: {{k.fg}}">{{k.val}}</span>
+            </li>
+          </sc-for>
+        </ul>
+
+        <sc-if value="{{isError}}" hint-placeholder-val="{{true}}">
+          <div role="alert" style="display: flex; gap: 12px; align-items: flex-start; background: #FEF3F2; border: 1.5px solid #FDA29B; border-radius: 14px; padding: 16px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B42318" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: 0 0 auto; margin-top: 1px"><circle cx="12" cy="12" r="10"></circle><path d="M12 7v6M12 17h.01"></path></svg>
+            <span style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 16px; font-weight: 800; color: #B42318">{{errTitle}}</span><span style="font-size: 14px; line-height: 1.55; color: #1E3A5F">{{errBody}}</span><a href="#" style="font-size: 14px; font-weight: 600">Xem hướng dẫn xuất video đúng chuẩn →</a></span>
+          </div>
+        </sc-if>
+        <sc-if value="{{isOk}}" hint-placeholder-val="{{false}}">
+          <div role="status" style="display: flex; gap: 12px; align-items: center; background: #CAE5F6; border-radius: 14px; padding: 14px 16px; font-size: 14px; color: #075BA8; font-weight: 600">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+            Video đạt yêu cầu kỹ thuật. Bạn có thể thay video đến hết hạn nộp bài.
+          </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 16px; padding: 14px 18px">
+      
+      <span style="margin-left: auto; display: flex; gap: 10px">
+        <a href="NopBai3.dc.html" style="min-height: 48px; display: inline-flex; align-items: center; padding: 0 20px; border-radius: 12px; border: 1.5px solid #075BA8; color: #075BA8; font-weight: 700; font-size: 15px; text-decoration: none">Quay lại</a>
+        <sc-if value="{{isOk}}" hint-placeholder-val="{{false}}">
+          <a href="NopBai5.dc.html" style="min-height: 48px; display: inline-flex; align-items: center; gap: 8px; padding: 0 22px; border-radius: 12px; background: #075BA8; color: #FFFFFF; font-weight: 700; font-size: 15px; text-decoration: none">Tiếp tục: Xem lại &amp; cam kết<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCEB87" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+        </sc-if>
+        <sc-if value="{{notOk}}" hint-placeholder-val="{{true}}">
+          <button type="button" disabled="disabled" style="min-height: 48px; padding: 0 22px; border-radius: 12px; border: 0; background: #CAE5F6; color: #4A6584; font-family: inherit; font-weight: 700; font-size: 15px">Tiếp tục: Xem lại &amp; cam kết</button>
+        </sc-if>
+      </span>
+    </div>
+  </div>
+</section>
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"state":{"editor":"enum","options":["Chưa chọn tệp","Đang tải","Lỗi thời lượng","Lỗi dung lượng","Lỗi định dạng","Hợp lệ"],"default":"Chưa chọn tệp"},"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { s: null, from: null };
+  }
+  renderVals() {
+    const tweak = this.props.state ?? 'Chưa chọn tệp';
+    const s = this.state.from === tweak && this.state.s ? this.state.s : tweak;
+    const go = (to) => () => {
+      clearTimeout(this._t);
+      this.setState({ s: to, from: tweak });
+      // Demo: tải lên xong sau ~2 giây thì chuyển sang Hợp lệ để bấm tiếp Bước 5
+      if (to === 'Đang tải') this._t = setTimeout(() => this.setState({ s: 'Hợp lệ', from: tweak }), 2000);
+    };
+    const names = ['Hình thức & hạng mục', 'Người dự thi', 'Thông tin tác phẩm', 'Tải video', 'Xem lại & cam kết'];
+    const steps = names.map((t, i) => ({ n: String(i + 1), t, sub: i < 3 ? 'Đã khai' : (i === 3 ? 'Đang thực hiện' : ''), done: i < 3, current: i === 3, todo: i > 3, bg: i === 3 ? '#CAE5F6' : 'transparent', w: i === 3 ? '800' : (i < 3 ? '700' : '600'), c: i === 3 ? '#075BA8' : (i < 3 ? '#1E3A5F' : '#4A6584') }));
+    const okC = (label, val) => ({ label, val, ok: true, bad: false, bg: '#F1F8FB', border: '1px solid #CAE5F6', fg: '#075BA8' });
+    const badC = (label, val) => ({ label, val, ok: false, bad: true, bg: '#FEF3F2', border: '1.5px solid #FDA29B', fg: '#B42318' });
+    const files = {
+      'Lỗi thời lượng': { fileName: 'video_chon_nghe.mp4', fileMeta: '186 MB · MP4 · 1920×1080', checks: [okC('ĐỊNH DẠNG', 'MP4'), okC('DUNG LƯỢNG', '186 MB'), badC('THỜI LƯỢNG', '1:42')], errTitle: 'Video dài 1:42, vượt giới hạn 12 giây', errBody: 'Video phải dài từ 1:00 đến 1:30, tính cả phần mở đầu và kết thúc. Hãy cắt ngắn rồi tải lại. Video sai thời lượng sẽ không được chấm.' },
+      'Lỗi dung lượng': { fileName: 'video_chon_nghe_4k.mov', fileMeta: '348 MB · MOV · 3840×2160', checks: [okC('ĐỊNH DẠNG', 'MOV'), badC('DUNG LƯỢNG', '348 MB'), okC('THỜI LƯỢNG', '1:21')], errTitle: 'Tệp nặng 348 MB, vượt giới hạn 300 MB', errBody: 'Hãy xuất lại video ở độ phân giải 1080p, tốc độ dữ liệu 5–12 Mbps. Video 1:30 ở mức này thường nhẹ hơn 150 MB.' },
+      'Lỗi định dạng': { fileName: 'video_chon_nghe.avi', fileMeta: '212 MB · AVI', checks: [badC('ĐỊNH DẠNG', 'AVI'), okC('DUNG LƯỢNG', '212 MB'), okC('THỜI LƯỢNG', '—')], errTitle: 'Định dạng AVI chưa được chấp nhận', errBody: 'Cổng thi chỉ nhận tệp MP4 hoặc MOV. Hãy xuất lại video với mã hóa H.264, âm thanh AAC.' },
+      'Hợp lệ': { fileName: 'video_chon_nghe.mp4', fileMeta: '142 MB · MP4 · 1920×1080 · Tải lên 14:41', checks: [okC('ĐỊNH DẠNG', 'MP4'), okC('DUNG LƯỢNG', '142 MB'), okC('THỜI LƯỢNG', '1:24')], errTitle: '', errBody: '' }
+    };
+    const f = files[s] || files['Hợp lệ'];
+    const isEmpty = s === 'Chưa chọn tệp';
+    const isUploading = s === 'Đang tải';
+    const hasFile = !isEmpty && !isUploading;
+    const isOk = s === 'Hợp lệ';
+    const isError = hasFile && !isOk;
+    return {
+      steps,
+      isEmpty, isUploading, hasFile, isOk, isError, notOk: !isOk,
+      fileName: f.fileName, fileMeta: f.fileMeta, checks: f.checks, errTitle: f.errTitle, errBody: f.errBody,
+      cardBorder: isError ? '1.5px solid #FDA29B' : '1px solid #CAE5F6',
+      iconBg: isError ? '#FEF3F2' : '#CAE5F6',
+      iconFg: isError ? '#B42318' : '#075BA8',
+      replaceLabel: isError ? 'Chọn tệp khác' : 'Thay video',
+      footNote: isOk ? 'Đã lưu nháp lúc 14:41' : (isUploading ? 'Đang tải lên…' : 'Cần một video hợp lệ để tiếp tục'),
+      toUploading: go('Đang tải'),
+      toEmpty: go('Chưa chọn tệp')
+    };
+  }
+}
+</script>
+<script src="assets/dc-lite.js"></script>
+</body>
+</html>

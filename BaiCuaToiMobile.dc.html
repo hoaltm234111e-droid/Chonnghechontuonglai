@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài dự thi của tôi – mobile</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:#F1F8FB;color:#1E3A5F}
+h1,h2,h3,.serif{font-family:'Lora',Georgia,serif;font-weight:700}
+a{color:#075BA8}a:hover{color:#05447E}
+*{box-sizing:border-box}
+.card{background:#FFFFFF;border:1px solid #CAE5F6;border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;gap:12px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;color:#075BA8}
+.btn{min-height:48px;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 18px;border-radius:12px;font-family:inherit;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer}
+.kv{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-top:1px solid #CAE5F6}
+.kv dt{font-size:11px;font-weight:700;letter-spacing:.12em;color:#4A6584}
+.kv dd{margin:0;font-size:14px;font-weight:600;line-height:1.45}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.fld input,.fld textarea{min-height:48px;border:1.5px solid #CAE5F6;border-radius:10px;padding:10px 12px;font-family:inherit;font-size:16px;color:#1E3A5F;background:#FFFFFF;width:100%}
+</style>
+</head>
+<body>
+<div id="dc-root"></div>
+<template id="dc-template">
+
+<div style="width: 100%; background: #F1F8FB; font-family: 'Be Vietnam Pro', system-ui, sans-serif; color: #1E3A5F">
+
+<!-- HEADER MOBILE -->
+<header style="background: #FFFFFF; border-bottom: 1px solid #CAE5F6">
+  <div style="padding: 10px 16px; display: flex; align-items: center; gap: 10px">
+    <a href="MainMobile.dc.html" style="display: flex; align-items: center; gap: 8px; text-decoration: none; min-width: 0; flex: 1 1 auto">
+      <img src="assets/img/logo-gdtd.png" alt="Báo Giáo dục và Thời đại" style="height: 32px; width: auto; display: block; flex: 0 0 auto">
+      <span aria-hidden="true" style="width: 1px; height: 26px; background: #CAE5F6; flex: 0 0 auto"></span>
+      <span class="serif" style="font-size: 15px; font-weight: 700; color: #075BA8; line-height: 1.2">Chọn nghề, Chọn tương lai</span>
+    </a>
+    <span aria-label="[Nguyễn Văn A]" style="width: 36px; height: 36px; border-radius: 50%; background: #CAE5F6; color: #075BA8; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: 0 0 auto">A</span>
+    <button type="button" onClick="{{toggleMenu}}" aria-expanded="{{menuExpanded}}" aria-label="Mở menu" style="width: 44px; height: 44px; border-radius: 10px; border: 1.5px solid #CAE5F6; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: 0 0 auto">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+    </button>
+  </div>
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+    <nav aria-label="Điều hướng chính" style="border-top: 1px solid #CAE5F6; padding: 8px 16px 16px; display: flex; flex-direction: column">
+      <a href="MainMobile.dc.html" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; color: #1E3A5F; text-decoration: none; padding-left: 16px">Trang chủ</a>
+      <a href="#" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; color: #1E3A5F; text-decoration: none; padding-left: 16px">Thể lệ</a>
+      <a href="BinhChonMobile.dc.html" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; color: #1E3A5F; text-decoration: none; padding-left: 16px">Video dự thi</a>
+      <a href="#" style="min-height: 48px; display: flex; align-items: center; font-size: 16px; font-weight: 700; color: #075BA8; text-decoration: none; border-left: 4px solid #FCEB87; padding-left: 12px">Bài dự thi của tôi</a>
+    </nav>
+  </sc-if>
+</header>
+
+<section style="padding: 22px 16px 40px; display: flex; flex-direction: column; gap: 16px">
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <span class="eyebrow">MÃ HỒ SƠ [HS-000123]</span>
+    <h1 style="margin: 0; font-size: 24px; line-height: 1.25; color: #075BA8">Bài dự thi của tôi</h1>
+    <span style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; border-radius: 999px; background: {{badgeBg}}; color: {{badgeFg}}; font-size: 12px; font-weight: 800">{{badge}}</span>
+  </div>
+
+  <!-- TIẾN TRÌNH (dọc trên mobile) -->
+  <ol aria-label="Tiến trình bài dự thi" style="list-style: none; margin: 0; padding: 16px; background: #FFFFFF; border: 1px solid #CAE5F6; border-radius: 16px; display: flex; flex-direction: column">
+    <sc-for list="{{track}}" as="t" hint-placeholder-count="5">
+      <li aria-current="{{t.aria}}" style="display: flex; gap: 12px">
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 0 0 28px">
+          <span style="width: 28px; height: 28px; border-radius: 50%; background: {{t.dotBg}}; border: {{t.dotBorder}}; color: {{t.dotFg}}; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; box-shadow: {{t.glow}}">{{t.mark}}</span>
+          <span aria-hidden="true" style="flex: 1; width: 3px; min-height: 14px; border-radius: 2px; background: {{t.line}}; margin: 4px 0"></span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px; padding: 3px 0 14px">
+          <span style="font-size: 14px; font-weight: {{t.w}}; color: {{t.c}}">{{t.t}}</span>
+          <span style="font-size: 12px; color: #4A6584">{{t.d}}</span>
+        </div>
+      </li>
+    </sc-for>
+  </ol>
+
+  <!-- 1. ĐÃ NỘP, CÒN SỬA -->
+  <sc-if value="{{sSubmitted}}" hint-placeholder-val="{{true}}">
+    <div class="card">
+      <span class="eyebrow">ĐÃ NỘP · 14:52:07 NGÀY 18/11/2026</span>
+      <h2 style="margin: 0; font-size: 19px; color: #075BA8">Bài đã được ghi nhận</h2>
+    </div>
+  </sc-if>
+
+  <!-- 2. ĐÃ KHÓA, ĐANG KIỂM TRA -->
+  <sc-if value="{{sChecking}}" hint-placeholder-val="{{false}}">
+    <div class="card">
+      <span class="eyebrow">ĐÃ KHÓA TỪ 00:00 NGÀY 01/12/2026</span>
+      <h2 style="margin: 0; font-size: 19px; color: #075BA8">Ban Thư ký đang kiểm tra hợp lệ</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 1.6">Hồ sơ không còn chỉnh sửa được. Ban Thư ký kiểm tra điều kiện dự thi, thời lượng, định dạng, thông tin đăng ký và dấu hiệu vi phạm quyền tác giả. Kết quả sẽ hiện tại đây và gửi qua email.</p>
+      <div style="background: #F1F8FB; border-radius: 12px; padding: 12px; font-size: 13px; line-height: 1.55">Chỉ được sửa lỗi kỹ thuật khi Ban Tổ chức yêu cầu bằng văn bản. Khi đó nút sửa sẽ mở lại tại đây trong thời hạn được thông báo.</div>
+    </div>
+  </sc-if>
+
+  <!-- 3. KHÔNG HỢP LỆ -->
+  <sc-if value="{{sInvalid}}" hint-placeholder-val="{{false}}">
+    <div class="card" style="border: 1.5px solid #FDA29B">
+      <span class="eyebrow" style="color: #B42318">KẾT QUẢ KIỂM TRA · [NGÀY]</span>
+      <h2 style="margin: 0; font-size: 19px; color: #B42318">Bài dự thi không hợp lệ</h2>
+      <div style="background: #FEF3F2; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #B42318">LÝ DO</span>
+        <span style="font-size: 14px; line-height: 1.55">[Lý do do Ban Thư ký ghi, ví dụ: video có trích đoạn âm nhạc chưa chứng minh được quyền sử dụng]</span>
+      </div>
+      <div style="border: 1.5px dashed #9FD1F6; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 13px; line-height: 1.5; color: #4A6584">[Chờ BTC quyết định có cho giải trình hay không. Nếu có: nút bên cạnh và thời hạn giải trình.]</span>
+        <button type="button" class="btn" style="border: 1.5px solid #075BA8; background: #FFFFFF; color: #075BA8">Gửi giải trình</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- 4. ĐỀ NGHỊ ĐỔI HẠNG MỤC -->
+  <sc-if value="{{sRecat}}" hint-placeholder-val="{{false}}">
+    <div class="card" style="border: 1.5px solid #309FF9">
+      <span class="eyebrow">THÔNG BÁO TỪ BAN TỔ CHỨC · [NGÀY]</span>
+      <h2 style="margin: 0; font-size: 19px; color: #075BA8">Đề nghị điều chỉnh hạng mục</h2>
+      <div style="display: flex; flex-direction: column; gap: 8px; align-items: stretch">
+        <div style="background: #F1F8FB; border-radius: 12px; padding: 12px"><span class="eyebrow" style="color: #4A6584">ĐÃ ĐĂNG KÝ</span><div class="serif" style="font-size: 16px; font-weight: 700; margin-top: 4px; color: #4A6584; text-decoration: line-through">01 – Công nghệ số và sáng tạo số</div></div>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#075BA8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="align-self: center"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+        <div style="background: #CAE5F6; border-radius: 12px; padding: 12px"><span class="eyebrow">CHUYỂN SANG</span><div class="serif" style="font-size: 16px; font-weight: 700; margin-top: 4px; color: #075BA8">02 – Kỹ thuật, công nghệ và sản xuất xanh – thông minh</div></div>
+      </div>
+      <p style="margin: 0; font-size: 14px; line-height: 1.6"><strong>Lý do:</strong> [Lý do Ban Tổ chức nêu]. Bài vẫn được chấm bình thường trong hạng mục mới.</p>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <button type="button" class="btn" style="border: 0; background: #075BA8; color: #FFFFFF">Tôi đã đọc thông báo</button>
+        <a href="#" class="btn" style="color: #075BA8">Liên hệ Ban Tổ chức</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- 5. TOP 30 -->
+  <sc-if value="{{sTop30}}" hint-placeholder-val="{{false}}">
+    <div class="card" style="border-top: 6px solid #C2410C">
+      <span class="eyebrow" style="color: #C2410C">CHÚC MỪNG · BÀI VÀO TOP 30</span>
+      <h2 style="margin: 0; font-size: 19px; color: #075BA8">Bổ sung hồ sơ trước [HẠN BỔ SUNG]</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 1.6">Video của bạn đang được công khai để bình chọn. Hãy tải lên đủ 2 giấy tờ dưới đây. <strong>Không nộp đúng hạn được xem là từ chối tiếp tục tham gia.</strong></p>
+      <sc-for list="{{docs}}" as="d" hint-placeholder-count="2">
+        <div style="display: flex; flex-direction: column; gap: 10px; border: {{d.border}}; border-radius: 12px; padding: 12px; background: {{d.bg}}">
+          <div style="display: flex; gap: 10px; align-items: flex-start">
+            <span style="width: 38px; height: 38px; border-radius: 10px; background: #CAE5F6; color: #075BA8; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: 0 0 auto">PDF</span>
+            <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 700">{{d.t}}</span><span style="font-size: 12px; line-height: 1.45; color: #4A6584">{{d.s}} · <a href="#">Tải mẫu</a></span></span>
+          </div>
+          <sc-if value="{{d.done}}" hint-placeholder-val="{{false}}"><span style="font-size: 13px; font-weight: 700; color: #075BA8">Đã tải lên · Đang chờ duyệt</span></sc-if>
+          <sc-if value="{{d.todo}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{d.up}}" class="btn" style="border: 0; background: #075BA8; color: #FFFFFF">Tải lên</button></sc-if>
+        </div>
+      </sc-for>
+      <a href="BinhChonMobile.dc.html" style="font-size: 14px; font-weight: 600">Xem video của tôi trên trang bình chọn →</a>
+    </div>
+  </sc-if>
+
+  <!-- 6. TOP 9 -->
+  <sc-if value="{{sTop9}}" hint-placeholder-val="{{false}}">
+    <div class="card" style="border-top: 6px solid #C2410C">
+      <span class="eyebrow" style="color: #C2410C">BÀI VÀO VÒNG CHUNG KẾT</span>
+      <h2 style="margin: 0; font-size: 19px; color: #075BA8">Xác nhận tham dự chung kết tại Hà Nội</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 1.6">[Ngày, giờ, địa điểm]. Mỗi bài có tối đa 5 phút hùng biện và 5 phút trả lời câu hỏi. Ban Tổ chức hỗ trợ một phần chi phí ăn ở, đi lại theo thông báo. Hạn xác nhận: [HẠN XÁC NHẬN].</p>
+      <div role="radiogroup" aria-label="Xác nhận tham dự" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <sc-for list="{{attendOpts}}" as="o" hint-placeholder-count="2">
+          <button type="button" role="radio" aria-checked="{{o.pressed}}" onClick="{{o.pick}}" style="min-height: 56px; padding: 0 8px; border-radius: 12px; border: {{o.border}}; background: {{o.bg}}; color: #075BA8; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer">{{o.t}}</button>
+        </sc-for>
+      </div>
+      <sc-if value="{{attendYes}}" hint-placeholder-val="{{true}}">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <span style="font-size: 14px; font-weight: 700">Người đại diện trình bày (tối đa 02)</span>
+          <label style="display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #309FF9; background: #CAE5F6; font-size: 14px; font-weight: 600"><input type="checkbox" checked="checked" style="width: 20px; height: 20px; accent-color: #075BA8">[Nguyễn Văn A]</label>
+          <label style="display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1.5px solid #309FF9; background: #CAE5F6; font-size: 14px; font-weight: 600"><input type="checkbox" checked="checked" style="width: 20px; height: 20px; accent-color: #075BA8">[Trần Thị B] · dưới 18 tuổi</label>
+          <div style="background: #F1F8FB; border: 1.5px solid #6CB9F7; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 12px">
+            <span style="font-size: 13px; line-height: 1.5"><strong style="color: #075BA8">[Trần Thị B] chưa đủ 18 tuổi</strong> nên phải có người đại diện hoặc người được ủy quyền hợp pháp đi cùng.</span>
+            <label class="fld">Họ tên người đi cùng *<input type="text"></label>
+            <label class="fld">Quan hệ *<input type="text" placeholder="Cha, mẹ, người được ủy quyền…"></label>
+            <label class="fld">Số điện thoại *<input type="tel"></label>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{attendNo}}" hint-placeholder-val="{{false}}">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <label class="fld">Lý do không tham dự *<textarea rows="3" placeholder="Nêu lý do để Ban Tổ chức xem xét"></textarea></label>
+          <span style="font-size: 12px; line-height: 1.5; color: #B42318">Nếu không tham dự mà không có lý do chính đáng, bài có thể được thay bằng bài có điểm kế tiếp trong cùng hạng mục.</span>
+        </div>
+      </sc-if>
+      <button type="button" class="btn" style="border: 0; background: #C2410C; color: #FFFFFF; box-shadow: 0 4px 0 #075BA8">Gửi xác nhận</button>
+    </div>
+  </sc-if>
+
+  <!-- 7. KẾT QUẢ -->
+  <sc-if value="{{sResult}}" hint-placeholder-val="{{false}}">
+    <div class="card" style="background: #075BA8; border: 0; color: #FFFFFF">
+      <span class="eyebrow" style="color: #FCEB87">KẾT QUẢ CHUNG CUỘC · HẠNG MỤC 01</span>
+      <h2 style="margin: 0; font-size: 24px; color: #FFFFFF">[Giải Nhì]</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 12px"><div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #CAE5F6">SƠ KHẢO · 40%</div><div style="font-size: 22px; font-weight: 800">[điểm]</div></div>
+        <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 12px"><div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #CAE5F6">HÙNG BIỆN · 60%</div><div style="font-size: 22px; font-weight: 800">[điểm]</div></div>
+        <div style="grid-column: 1 / span 2; background: #FCEB87; color: #075BA8; border-radius: 12px; padding: 12px"><div style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em">ĐIỂM CHUNG KẾT</div><div style="font-size: 24px; font-weight: 800">[điểm]</div></div>
+      </div>
+      <span style="font-size: 13px; line-height: 1.55; color: #CAE5F6">Giấy chứng nhận và tiền thưởng (đã bao gồm thuế) được trao theo thông báo của Ban Tổ chức.</span>
+      <div style="display: flex; flex-direction: column; gap: 8px"><a href="#" class="btn" style="background: #FCEB87; color: #075BA8">Xem bảng kết quả</a><a href="#" class="btn" style="border: 1.5px solid #FFFFFF; color: #FFFFFF">Tải giấy chứng nhận</a></div>
+    </div>
+  </sc-if>
+
+  <!-- TÓM TẮT BÀI -->
+  <div class="card" style="gap: 10px">
+    <div style="aspect-ratio: 16 / 9; border-radius: 12px; background: #9FD1F6; display: flex; align-items: center; justify-content: center; position: relative">
+      <span style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="#075BA8" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+      <span style="position: absolute; right: 8px; bottom: 8px; background: rgba(7, 91, 168, 0.88); color: #FFFFFF; font-size: 11px; font-weight: 600; padding: 3px 7px; border-radius: 6px">1:24</span>
+    </div>
+    <h3 style="margin: 4px 0 0; font-size: 18px; color: #075BA8">[Tên video dự thi]</h3>
+    <dl style="margin: 0">
+      <div class="kv"><dt>HẠNG MỤC</dt><dd>{{catLabel}}</dd></div>
+      <div class="kv"><dt>NGƯỜI DỰ THI</dt><dd>Nhóm · [Nguyễn Văn A] (trưởng nhóm), [Trần Thị B]</dd></div>
+      <div class="kv"><dt>CƠ SỞ · MIỀN</dt><dd>[Tên cơ sở GDNN] · Miền Nam</dd></div>
+      <div class="kv"><dt>THỜI ĐIỂM NỘP</dt><dd>14:52:07 · 18/11/2026</dd></div>
+    </dl>
+  </div>
+
+  <!-- THÔNG BÁO -->
+  <div class="card">
+    <h2 style="margin: 0; font-size: 19px; color: #075BA8">Thông báo về bài của bạn</h2>
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+      <sc-for list="{{notices}}" as="n" hint-placeholder-count="3">
+        <li style="display: flex; flex-direction: column; gap: 2px; padding: 10px 0; border-top: 1px solid #CAE5F6"><span style="font-size: 12px; font-weight: 700; color: #4A6584">{{n.d}}</span><span style="font-size: 14px; line-height: 1.5">{{n.t}}</span></li>
+      </sc-for>
+    </ul>
+  </div>
+
+  
+</section>
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"stage":{"editor":"enum","options":["Đã nộp – còn sửa được","Đã khóa – đang kiểm tra","Không hợp lệ","Đề nghị đổi hạng mục","Top 30 – bổ sung hồ sơ","Top 9 – xác nhận chung kết","Kết quả"],"default":"Đã nộp – còn sửa được"},"$preview":{"width":390,"height":2400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { attend: 'yes', up: {}, menu: false };
+  }
+  renderVals() {
+    const stage = this.props.stage ?? 'Đã nộp – còn sửa được';
+    const map = {
+      'Đã nộp – còn sửa được': { k: 'submitted', at: 0, badge: 'Đã nộp', bb: '#CAE5F6', bf: '#075BA8' },
+      'Đã khóa – đang kiểm tra': { k: 'checking', at: 1, badge: 'Đang kiểm tra', bb: '#CAE5F6', bf: '#075BA8' },
+      'Không hợp lệ': { k: 'invalid', at: 1, badge: 'Không hợp lệ', bb: '#FEF3F2', bf: '#B42318', err: true },
+      'Đề nghị đổi hạng mục': { k: 'recat', at: 1, badge: 'Có thông báo mới', bb: '#FCEB87', bf: '#075BA8' },
+      'Top 30 – bổ sung hồ sơ': { k: 'top30', at: 2, badge: 'Top 30 · Cần bổ sung hồ sơ', bb: '#C2410C', bf: '#FFFFFF' },
+      'Top 9 – xác nhận chung kết': { k: 'top9', at: 3, badge: 'Top 9 · Cần xác nhận', bb: '#C2410C', bf: '#FFFFFF' },
+      'Kết quả': { k: 'result', at: 4, badge: 'Đã có kết quả', bb: '#075BA8', bf: '#FFFFFF' }
+    };
+    const m = map[stage] || map['Đã nộp – còn sửa được'];
+    const labels = [
+      { t: 'Nộp bài', d: 'đến 30/11' },
+      { t: 'Kiểm tra hợp lệ', d: 'từ 01/12' },
+      { t: 'Top 30 · Bình chọn', d: '06/12 – 15/12' },
+      { t: 'Top 9 · Chung kết', d: 'tại Hà Nội' },
+      { t: 'Kết quả', d: '[ngày công bố]' }
+    ];
+    const track = labels.map((l, i) => {
+      const done = i < m.at, cur = i === m.at, bad = cur && m.err;
+      return {
+        ...l,
+        aria: cur ? 'step' : 'false',
+        mark: done ? '✓' : String(i + 1),
+        dotBg: bad ? '#B42318' : (cur ? '#C2410C' : (done ? '#075BA8' : '#FFFFFF')),
+        dotBorder: done || cur ? '0' : '2px solid #9FD1F6',
+        dotFg: done || cur ? '#FFFFFF' : '#4A6584',
+        glow: cur ? (bad ? '0 0 0 5px rgba(180, 35, 24, 0.18)' : '0 0 0 5px rgba(255, 154, 82, 0.35)') : 'none',
+        line: i === labels.length - 1 ? 'transparent' : (done ? '#075BA8' : '#CAE5F6'),
+        w: cur ? '800' : '600',
+        c: bad ? '#B42318' : (cur ? '#075BA8' : (done ? '#1E3A5F' : '#4A6584'))
+      };
+    });
+    const up = this.state.up;
+    const docs = [
+      { id: 'cs', t: 'Xác nhận của cơ sở giáo dục nghề nghiệp', s: 'Theo mẫu của Ban Tổ chức, có chữ ký và dấu của cơ sở' },
+      { id: 'dy', t: 'Giấy đồng ý theo mẫu', s: 'Theo mẫu của Ban Tổ chức; bắt buộc có chữ ký cha mẹ với thành viên dưới 18 tuổi' }
+    ].map((d) => ({ ...d, done: !!up[d.id], todo: !up[d.id], border: up[d.id] ? '1.5px solid #309FF9' : '1px solid #CAE5F6', bg: up[d.id] ? '#F1F8FB' : '#FFFFFF', up: () => this.setState({ up: { ...up, [d.id]: true } }) }));
+    const attend = this.state.attend;
+    const attendOpts = [{ id: 'yes', t: 'Chúng tôi sẽ tham dự' }, { id: 'no', t: 'Không thể tham dự' }].map((o) => ({ ...o, pressed: attend === o.id ? 'true' : 'false', border: attend === o.id ? '2px solid #075BA8' : '1.5px solid #CAE5F6', bg: attend === o.id ? '#CAE5F6' : '#FFFFFF', pick: () => this.setState({ attend: o.id }) }));
+    const noticesAll = [
+      { d: '[--/12]', t: 'Kết quả chung cuộc đã được công bố.', at: 4 },
+      { d: '[--/12]', t: 'Bài vào vòng chung kết. Vui lòng xác nhận tham dự.', at: 3 },
+      { d: '[--/12]', t: 'Bài vào Top 30. Vui lòng bổ sung hồ sơ trong thời hạn.', at: 2 },
+      { d: '[--/12]', t: m.k === 'invalid' ? 'Kết quả kiểm tra: bài không hợp lệ.' : (m.k === 'recat' ? 'Ban Tổ chức đề nghị điều chỉnh hạng mục.' : 'Hồ sơ đã khóa, bắt đầu kiểm tra hợp lệ.'), at: 1 },
+      { d: '18/11', t: 'Nộp bài thành công. Mã hồ sơ [HS-000123].', at: 0 }
+    ];
+    const menu = this.state.menu;
+    return {
+      menuOpen: menu,
+      menuExpanded: menu ? 'true' : 'false',
+      toggleMenu: () => this.setState({ menu: !menu }),
+      badge: m.badge, badgeBg: m.bb, badgeFg: m.bf,
+      track,
+      sSubmitted: m.k === 'submitted', sChecking: m.k === 'checking', sInvalid: m.k === 'invalid', sRecat: m.k === 'recat',
+      sTop30: m.k === 'top30', sTop9: m.k === 'top9', sResult: m.k === 'result',
+      docs, attendOpts, attendYes: attend === 'yes', attendNo: attend === 'no',
+      notices: noticesAll.filter((n) => n.at <= m.at),
+      catLabel: m.k === 'recat' ? '02 – Kỹ thuật, CN & SX xanh (đã điều chỉnh)' : '01 – Công nghệ số và sáng tạo số'
+    };
+  }
+}
+</script>
+<script src="assets/dc-lite.js"></script>
+</body>
+</html>

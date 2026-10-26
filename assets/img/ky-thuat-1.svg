@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <rect width="640" height="360" fill="#9FD1F6"></rect>
+  <rect x="0" y="0" width="640" height="60" fill="#6CB9F7"></rect>
+  <path d="M0 60h640" stroke="#075BA8" stroke-width="4"></path>
+  <g fill="#CAE5F6"><rect x="40" y="90" width="90" height="60" rx="4"></rect><rect x="150" y="90" width="90" height="60" rx="4"></rect></g>
+  <rect x="0" y="282" width="640" height="78" fill="#075BA8"></rect>
+  <path d="M0 282h640" stroke="#FCEB87" stroke-width="6" stroke-dasharray="24 16"></path>
+  <g transform="translate(470 120)">
+    <circle r="54" fill="#FCEB87"></circle>
+    <g fill="#FCEB87"><rect x="-12" y="-72" width="24" height="22" rx="4"></rect><rect x="-12" y="50" width="24" height="22" rx="4"></rect><rect x="-72" y="-12" width="22" height="24" rx="4"></rect><rect x="50" y="-12" width="22" height="24" rx="4"></rect></g>
+    <circle r="20" fill="#9FD1F6"></circle>
+  </g>
+  <rect x="380" y="232" width="110" height="50" rx="8" fill="#1E3A5F"></rect>
+  <path d="M435 232V170l60-40" stroke="#FF9A52" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+  <circle cx="435" cy="170" r="16" fill="#C2410C"></circle>
+  <circle cx="495" cy="130" r="13" fill="#C2410C"></circle>
+  <path d="M500 128l30 6M500 128l24 22" stroke="#1E3A5F" stroke-width="8" stroke-linecap="round"></path>
+  <path d="M120 360v-74c0-34 22-58 56-58h20c32 0 50 24 50 58v74z" fill="#309FF9"></path>
+  <rect x="150" y="236" width="56" height="56" rx="6" fill="#075BA8" opacity="0.35"></rect>
+  <circle cx="186" cy="180" r="30" fill="#F2C7A5"></circle>
+  <path d="M150 176a36 34 0 0 1 72 0z" fill="#FCEB87" stroke="#075BA8" stroke-width="3"></path>
+  <rect x="144" y="172" width="84" height="10" rx="5" fill="#FCEB87" stroke="#075BA8" stroke-width="3"></rect>
+  <path d="M236 262l58-20" stroke="#F2C7A5" stroke-width="14" stroke-linecap="round"></path>
+  <rect x="290" y="226" width="64" height="20" rx="4" fill="#F1F8FB"></rect>
+</svg>
